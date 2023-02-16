@@ -5,7 +5,7 @@ A little bit about me with a collection of my current projects.
 ## Table of Contents
 
 - [Installation](#installation)
-- [To_Do](#To Do)
+- [To_Do](#To_Do)
 
 ## Installation
 
@@ -19,7 +19,7 @@ gh repo fork ShawnO86/portfolio-site
 gh repo clone portfolio-site
 ```
 
-## To Do 
+## To_Do 
 
 - Work in progress. 
 - Add content to sections:
