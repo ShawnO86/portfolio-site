@@ -22,7 +22,7 @@ gh repo clone portfolio-site
 ```sh
 npm run dev
 ```
-- Build for production environment with:
+- Build for production environment with (outputs build bundle to "docs" folder):
 ```sh
 npm run build
 ```
