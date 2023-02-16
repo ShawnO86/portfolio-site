@@ -9,14 +9,22 @@ A little bit about me with a collection of my current projects.
 
 ## Installation
 
-- To fork(copy) and clone(download) this repo:
+- First fork(copy) this repo with:
 ```sh
 gh repo fork ShawnO86/portfolio-site
 ```
-- Navigate to your preferred directory to put the project
-- Clone the project:
+- Next, navigate to your preferred directory to put the project.
+- Then, clone(download) the project with:
 ```sh
 gh repo clone portfolio-site
+```
+- You can view it in a development environment with:
+```sh
+npm run dev
+```
+- Build for production environment with:
+```sh
+npm run build
 ```
 
 ## To_Do 
