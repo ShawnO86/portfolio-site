@@ -7,12 +7,12 @@ for (let i = 0; i < btnArr.length; i++) {
     let filteredBtns = btnArr.filter((btn) => btn !== btnArr[i]);
 
     //give current button event listener
-    btnArr[i].addEventListener("click", function (e) {
+    btnArr[i].addEventListener("click", function () {
         //select collapsed content for current button
         let content = this.nextElementSibling;
         //add active class to clicked button
         content.classList.add("activeContent");
-        this.classList.add("activeBtn")
+        this.classList.add("activeBtn");
 
         //if maxHeight is set
         if (content.style.maxHeight) {
@@ -27,4 +27,4 @@ for (let i = 0; i < btnArr.length; i++) {
                 (btn) => (btn.nextElementSibling.style.maxHeight = null, btn.nextElementSibling.classList.remove("activeContent"), btn.classList.remove("activeBtn")));
         }
     });
-}
+};
