@@ -44,6 +44,9 @@ header {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+.social i {
     font-size: clamp(1.25rem, 2vw, 1.5rem); 
     color: var(--med);
 }
