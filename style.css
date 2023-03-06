@@ -1,8 +1,8 @@
 :root {
-    --popGreen: #B9FF08;
-    --dark: #3B3B3B;
-    --med: #6E6E6E;
-    --light: #F0F0F0;
+    --popGreen: 185, 255, 8;
+    --dark: 59, 59, 59;
+    --med: 110, 110, 110;
+    --light: 240, 240, 240;
 }
 
 * {
@@ -18,7 +18,7 @@ a {
 body {
     height: 100vh;
     display: grid;
-    background-color: var(--light);
+    background-color: rgb(var(--med));
     grid-template-areas:
         "head main main main"
         "head main main main"
@@ -27,17 +27,17 @@ body {
 }
 
 header {
-    background-color: var(--dark);
+    background-color: rgb(var(--dark));
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: right;
-    padding: 2rem 1rem 2rem 0.5rem;
+    padding: 2rem clamp(1.5rem, 5vw, 5rem);
+    margin: 0;
     box-shadow: 0.25rem 0 0.5rem rgba(0, 0, 0, 0.3);
     z-index: 2;
     grid-area: head;
-
 }
 
 .headText {
@@ -46,33 +46,37 @@ header {
 
 .social {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    gap: 3vw;
 }
 
 .social i {
-    font-size: clamp(1.25rem, 2vw, 2rem); 
-    color: var(--med);
+    font-size: clamp(1.25rem, 3vw, 2.75rem);
+    color: rgb(var(--med));
+    transition: color 0.2s ease-in-out;
 }
 
 .social i:hover {
     cursor: pointer;
-    color: var(--light);
+    color: rgb(var(--light));
 }
 
 .headText h1 {
     font-family: 'Abril Fatface', cursive;
-    font-size: clamp(2.5rem, 4vw, 4.5rem);
-    color: var(--med);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    letter-spacing: 0.1rem;
+    color: rgb(var(--dark));
+    text-shadow: -2px 0 rgb(var(--popGreen)), 0 2px rgb(var(--popGreen)), 2px 0 rgb(var(--popGreen)), 0 -2px rgb(var(--popGreen));
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
 }
 
 .headText h1:hover {
-    color: var(--popGreen);
+    color: rgb(var(--popGreen));
+    text-shadow: none;
 }
 
 .headText h2 {
-    font-size: clamp(1.5rem, 2vw, 2.25rem); 
-    color: var(--med);
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    color: rgb(var(--med));
 }
 
 header h1, header h2 {
@@ -93,35 +97,29 @@ main {
 }
 
 .collBtn {
-    background-color: var(--med);
-    color: var(--light);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: clamp(1rem, 1.7vw, 1.5rem); 
-    padding: 0.25rem 1rem 0.25rem 3rem;
+    background-color: rgba(var(--dark), 0.5);
+    color: rgb(var(--light));
     transition: color 0.2s ease-in-out;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: clamp(1rem, 2vw, 2rem);
+    padding: 0rem 1rem 0rem 3rem;
+    transition: color 0.2s ease-in-out, padding 0.2s ease-in-out, text-shadow 0.2s ease-in-out, justify-content 0.2s ease-in-out, background-color 0.2s ease-in-out, font-size 0.2s ease-in-out;
     flex: 1;
 }
 
 .collBtn:after {
-    padding: 0 1rem;
+    padding: 0 clamp(1rem, 3vw, 3rem);
     content: "\1F892";
-    font-size: 3rem;
-    position: relative;
-    bottom: 0.2rem;
-    right: 2rem;
-    opacity: 0.5;
-    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    font-size: clamp(1rem, 3vw, 3rem);
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 .collBtn i {
-    padding: 0 1rem 0 0;
-    font-size: smaller;
-}
-
-.collBtn:nth-of-type(even) {
-    background-color: var(--med);
+    padding: 0 1rem;
+    font-size: clamp(1rem, 2vw, 2rem);
+    transition: font-size 0.2s ease-in-out;
 }
 
 .collBtn:last-of-type {
@@ -130,12 +128,15 @@ main {
 
 .collBtn:hover {
     cursor: pointer;
-    color: var(--popGreen);
+    color: rgb(var(--dark));
+    background: rgba(var(--dark), 0.9);
+    text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
 }
 
 .collBtn:hover::after {
-    transform: translate(1rem, 0) scale(1.15);
-    color: var(--popGreen);
+    transform: translate(3vw, 0);
+    color: rgb(var(--popGreen));
+    text-shadow: none;
     opacity: 1;
 }
 
@@ -143,8 +144,7 @@ main {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    font-size: 16px;
+    transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .content p {
@@ -152,19 +152,37 @@ main {
 }
 
 .activeBtn {
-    color: var(--popGreen);
+    color: rgb(var(--dark));
+    background: rgba(var(--dark), 0.9);
+    text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    padding: 1rem 1rem 1rem 5vw;
 }
 
 .activeBtn:after, .activeBtn:hover::after {
-    transform: rotate(90deg) translate(8px, -8px) scale(1.25);
-    color: var(--popGreen);
+    transform: rotate(90deg) translateX(0.25rem) scale(2);
+    color: rgb(var(--popGreen));
     opacity: 1;
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    text-shadow: none;
+}
+
+.activeBtn i {
+    font-size: clamp(1rem, 3vw, 2.5rem);
 }
 
 .activeContent {
     overflow-y: scroll;
     margin: 1rem;
-    padding: 1rem;
+    padding: 1rem 7vw 1rem 5vw;
     opacity: 1;
-    color: var(--dark);
+    color: rgb(var(--light));
+}
+
+.activeContent h4 {
+    font-size: clamp(1.15rem, 2vw, 2.15rem);
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 0.08rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed rgb(var(--popGreen));
 }
