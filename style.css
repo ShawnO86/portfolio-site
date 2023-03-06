@@ -11,6 +11,10 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     height: 100vh;
     display: grid;
@@ -24,7 +28,6 @@ body {
 
 header {
     background-color: var(--dark);
-    color: var(--popGreen);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -34,6 +37,7 @@ header {
     box-shadow: 0.25rem 0 0.5rem rgba(0, 0, 0, 0.3);
     z-index: 2;
     grid-area: head;
+
 }
 
 .headText {
@@ -47,7 +51,7 @@ header {
 }
 
 .social i {
-    font-size: clamp(1.25rem, 2vw, 1.5rem); 
+    font-size: clamp(1.25rem, 2vw, 2rem); 
     color: var(--med);
 }
 
@@ -58,11 +62,16 @@ header {
 
 .headText h1 {
     font-family: 'Abril Fatface', cursive;
-    font-size: clamp(2.5rem, 4vw, 3rem);
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    color: var(--med);
+}
+
+.headText h1:hover {
+    color: var(--popGreen);
 }
 
 .headText h2 {
-    font-size: clamp(1.25rem, 2vw, 1.5rem); 
+    font-size: clamp(1.5rem, 2vw, 2.25rem); 
     color: var(--med);
 }
 
@@ -140,6 +149,10 @@ main {
 
 .content p {
     padding: 0.15rem 0;
+}
+
+.activeBtn {
+    color: var(--popGreen);
 }
 
 .activeBtn:after, .activeBtn:hover::after {
