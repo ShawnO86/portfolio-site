@@ -17,12 +17,9 @@ a {
 
 body {
     height: 100vh;
-    display: grid;
+    margin: 0 auto;
+    display: flex;
     background-color: rgb(var(--med));
-    grid-template-areas:
-        "head main main main"
-        "head main main main"
-        "head main main main";
     font-family: 'Poppins', sans-serif;
 }
 
@@ -33,24 +30,23 @@ header {
     justify-content: space-between;
     align-items: center;
     text-align: right;
-    padding: 2rem clamp(1.5rem, 5vw, 5rem);
     margin: 0;
-    box-shadow: 0.25rem 0 0.5rem rgba(0, 0, 0, 0.3);
+    box-shadow: 1rem 0 1rem -0.5rem rgba(var(--dark), 0.65);
     z-index: 2;
-    grid-area: head;
 }
 
 .headText {
     display: flex;
+    padding-top: 2rem;
 }
 
 .social {
     display: flex;
-    gap: 3vw;
+    padding: 1rem 0.5rem;
+    gap: 0.5rem;
 }
 
 .social i {
-    font-size: clamp(1.25rem, 3vw, 2.75rem);
     color: rgb(var(--med));
     transition: color 0.2s ease-in-out;
 }
@@ -62,11 +58,10 @@ header {
 
 .headText h1 {
     font-family: 'Abril Fatface', cursive;
-    font-size: clamp(2.5rem, 5vw, 5rem);
-    letter-spacing: 0.1rem;
     color: rgb(var(--dark));
     text-shadow: -2px 0 rgb(var(--popGreen)), 0 2px rgb(var(--popGreen)), 2px 0 rgb(var(--popGreen)), 0 -2px rgb(var(--popGreen));
     transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+    font-size: clamp(2rem, 5vw, 4rem);
 }
 
 .headText h1:hover {
@@ -75,114 +70,178 @@ header {
 }
 
 .headText h2 {
-    font-size: clamp(1.5rem, 3vw, 3rem);
     color: rgb(var(--med));
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+.headText h1, .headText h2 {
+    transform: rotate(180deg);
 }
 
 header h1, header h2 {
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
 }
 
 main {
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    max-height: 100vh;
-    width: 100%;
-    gap: 0.25rem;
-    grid-area: main;
 }
 
 .collBtn {
     background-color: rgba(var(--dark), 0.5);
     color: rgb(var(--light));
-    transition: color 0.2s ease-in-out;
     display: flex;
     justify-content: left;
     align-items: center;
-    font-size: clamp(1rem, 2vw, 2rem);
-    padding: 0rem 1rem 0rem 3rem;
-    transition: color 0.2s ease-in-out, padding 0.2s ease-in-out, text-shadow 0.2s ease-in-out, justify-content 0.2s ease-in-out, background-color 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, padding 0.2s ease-in-out, text-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
     flex: 1;
+    padding-left: 2rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-top: 2px;
+}
+
+.collBtn:first-of-type {
+    margin-top: 0;
 }
 
 .collBtn:after {
-    padding: 0 clamp(1rem, 3vw, 3rem);
     content: "\1F892";
-    font-size: clamp(1rem, 3vw, 3rem);
-    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    margin-left: 1rem;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    transition: transform 0.3s ease-in-out;
 }
 
 .collBtn i {
     padding: 0 1rem;
-    font-size: clamp(1rem, 2vw, 2rem);
-    transition: font-size 0.2s ease-in-out;
-}
-
-.collBtn:last-of-type {
-    margin-bottom: -0.25rem;
 }
 
 .collBtn:hover {
     cursor: pointer;
     color: rgb(var(--dark));
-    background: rgba(var(--dark), 0.9);
+    background: rgb(var(--dark));
     text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
 }
 
 .collBtn:hover::after {
-    transform: translate(3vw, 0);
-    color: rgb(var(--popGreen));
-    text-shadow: none;
-    opacity: 1;
+    color: rgb(var(--dark));
+    transform: scale(1.5) translatex(0.5rem);
 }
 
 .content {
+    text-align: justify;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
-.content p {
-    padding: 0.15rem 0;
+.picture {
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 12rem;
+    height: 12rem;
+    background-image: url(booboo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .activeBtn {
     color: rgb(var(--dark));
-    background: rgba(var(--dark), 0.9);
+    background: rgb(var(--dark), 0.9);
     text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
-    font-size: clamp(1rem, 3vw, 2.5rem);
-    padding: 1rem 1rem 1rem 5vw;
+    box-shadow: 0 1rem 1rem -0.5rem rgba(var(--dark), 0.65);
+    z-index: 2;
+    margin-top: 0;
 }
 
 .activeBtn:after, .activeBtn:hover::after {
-    transform: rotate(90deg) translateX(0.25rem) scale(2);
-    color: rgb(var(--popGreen));
-    opacity: 1;
-    font-size: clamp(1rem, 3vw, 2.5rem);
-    text-shadow: none;
-}
-
-.activeBtn i {
-    font-size: clamp(1rem, 3vw, 2.5rem);
+    transform: rotate(90deg) translate(0.5rem, -0.5rem) scale(2);
+    color: rgb(var(--dark));
 }
 
 .activeContent {
-    overflow-y: scroll;
-    margin: 1rem;
-    padding: 1rem 7vw 1rem 5vw;
+    overflow: scroll;
     opacity: 1;
     color: rgb(var(--light));
+    background-color: rgba(var(--dark), 0.75);
+    padding: 1rem 2rem 1rem 3rem;
 }
 
 .activeContent h4 {
-    font-size: clamp(1.15rem, 2vw, 2.15rem);
     font-family: 'Abril Fatface', cursive;
-    letter-spacing: 0.08rem;
-    margin-bottom: 1rem;
     border-bottom: 1px dashed rgb(var(--popGreen));
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    main {
+        max-height: 90vh;
+        height: 100%;
+    }
+
+    header {
+        flex-direction: row;
+        text-align: left;
+        height: 10vh;
+    }
+
+    .headText {
+        padding: 0.5rem 0 0.5rem 0.5rem;
+        flex-direction: column;
+    }
+
+    .social {
+        flex-direction: column;
+        padding: 0.5rem 0.5rem 0.5rem 0;
+    }
+
+    .headText h1 {
+        text-shadow: -2px 0 rgb(var(--med)), 0 2px rgb(var(--med)), 2px 0 rgb(var(--med)), 0 -2px rgb(var(--med));
+    }
+
+    .headText h1, .headText h2 {
+        transform: rotate(360deg);
+    }
+
+    header h1, header h2 {
+        writing-mode: horizontal-tb;
+    }
+
+    .collBtn {
+        padding: 0;
+        margin-top: 1px;
+    }
+
+    .collBtn i {
+        padding: 0 0.5rem;
+    }
+
+    .content {
+        font-size: 0.9rem;
+    }
+
+    .activeBtn {
+        margin-top: 0;
+    }
+
+    .activeBtn:first-of-type {
+        margin-top: 1px;
+    }
+
+    .activeContent {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        background-color: rgba(var(--dark), 0.75);
+    }
+
+    .activeContent h4 {
+        padding-top: 1rem;
+        font-size: 1rem;
+    }
+
 }
