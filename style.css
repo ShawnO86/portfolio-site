@@ -105,9 +105,9 @@ main {
 }
 
 .collBtn:after {
-    content: "\1F892";
+    content: "\f0da";
+    font: var(--fa-font-solid);
     margin-left: 1rem;
-    font-size: clamp(1rem, 2.5vw, 2rem);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -124,7 +124,7 @@ main {
 
 .collBtn:hover::after {
     color: rgb(var(--dark));
-    transform: scale(1.5) translatex(0.5rem);
+    transform: scale(1.25) translatex(0.5rem);
 }
 
 .content {
@@ -156,7 +156,7 @@ main {
 }
 
 .activeBtn:after, .activeBtn:hover::after {
-    transform: rotate(90deg) translate(0.5rem, -0.5rem) scale(2);
+    transform: rotate(90deg) translate(0.5rem, -0.5rem) scale(1.25);
     color: rgb(var(--dark));
 }
 
