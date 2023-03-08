@@ -131,7 +131,7 @@ main {
     text-align: justify;
     max-height: 0;
     opacity: 0;
-    overflow: hidden;
+    overflow-y: hidden;
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
@@ -161,7 +161,7 @@ main {
 }
 
 .activeContent {
-    overflow: scroll;
+    overflow-y: scroll;
     opacity: 1;
     color: rgb(var(--light));
     background-color: rgba(var(--dark), 0.75);
