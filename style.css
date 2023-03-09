@@ -5,6 +5,8 @@
     --light: 240, 240, 240;
 }
 
+
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -33,17 +35,18 @@ header {
     margin: 0;
     box-shadow: 1rem 0 1rem -0.5rem rgba(var(--dark), 0.65);
     z-index: 2;
-}
+}/* add a media query for header height!!! */
 
 .headText {
     display: flex;
-    padding-top: 2rem;
+    padding: 2rem clamp(1rem, 3vw, 3rem);
 }
 
 .social {
     display: flex;
     padding: 1rem 0.5rem;
-    gap: 0.5rem;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
 .social i {
@@ -135,20 +138,22 @@ main {
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
-.picture {
-    border-radius: 50%;
-    border: 1px solid black;
-    width: 12rem;
-    height: 12rem;
-    background-image: url(booboo.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+.innerContent {
+    display: flex;
+}
+
+.innerContent p {
+    margin-bottom: 1rem;
+}
+
+.picture img {
+    width: 100%;
+    margin-right: 2rem;
 }
 
 .activeBtn {
     color: rgb(var(--dark));
-    background: rgb(var(--dark), 0.9);
+    background: rgb(var(--dark));
     text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
     box-shadow: 0 1rem 1rem -0.5rem rgba(var(--dark), 0.65);
     z-index: 2;
@@ -172,6 +177,7 @@ main {
     font-family: 'Abril Fatface', cursive;
     border-bottom: 1px dashed rgb(var(--popGreen));
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -187,7 +193,7 @@ main {
     header {
         flex-direction: row;
         text-align: left;
-        height: 10vh;
+        min-height: 10vh;
     }
 
     .headText {
