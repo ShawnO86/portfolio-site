@@ -1,6 +1,6 @@
 :root {
     --popGreen: 185, 255, 8;
-    --dark: 59, 59, 59;
+    --dark: 33, 33, 33;
     --med: 110, 110, 110;
     --light: 240, 240, 240;
 }
@@ -19,34 +19,42 @@ a {
 
 body {
     height: 100vh;
-    margin: 0 auto;
+    padding: clamp(0.5rem, 1vw, 1rem) 0 clamp(0.5rem, 1vw, 1rem) clamp(0.5rem, 2vw, 2rem);
     display: flex;
-    background-color: rgb(var(--med));
+    background-color: black;
+    background-image: url(./assets/prism.png);
     font-family: 'Poppins', sans-serif;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid black;
+    border-top: 1px solid black;
+}
+
 header {
-    background-color: rgb(var(--dark));
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: right;
-    margin: 0;
-    box-shadow: 1rem 0 1rem -0.5rem rgba(var(--dark), 0.65);
-    z-index: 2;
-}/* add a media query for header height!!! */
+    background-color: rgba(var(--dark), 0.7);
+    border-radius: 1rem 0 0 1rem;
+    border: 1px solid black;
+    border-right: none;
+}
 
 .headText {
     display: flex;
-    padding: 2rem clamp(1rem, 3vw, 3rem);
+    padding: 2rem clamp(1.5rem, 5vw, 5rem);
 }
 
 .social {
     display: flex;
     padding: 1rem 0.5rem;
     gap: clamp(0.5rem, 2vw, 1.5rem);
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 3vw, 2.5rem);
 }
 
 .social i {
@@ -61,20 +69,21 @@ header {
 
 .headText h1 {
     font-family: 'Abril Fatface', cursive;
-    color: rgb(var(--dark));
-    text-shadow: -2px 0 rgb(var(--popGreen)), 0 2px rgb(var(--popGreen)), 2px 0 rgb(var(--popGreen)), 0 -2px rgb(var(--popGreen));
+    color: rgba(var(--dark), 1);
+    text-shadow: -2px 0 rgb(var(--med)), 0 2px rgb(var(--med)), 2px 0 rgb(var(--med)), 0 -2px rgb(var(--med));
     transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 4vw, 4rem);
+    letter-spacing: 0.1rem;
 }
 
 .headText h1:hover {
-    color: rgb(var(--popGreen));
-    text-shadow: none;
+    color: rgb(var(--dark));
+    text-shadow: -2px 0 rgb(var(--popGreen)), 0 2px rgb(var(--popGreen)), 2px 0 rgb(var(--popGreen)), 0 -2px rgb(var(--popGreen));
 }
 
 .headText h2 {
     color: rgb(var(--med));
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 2vw, 2rem);
 }
 
 .headText h1, .headText h2 {
@@ -82,24 +91,22 @@ header {
 }
 
 header h1, header h2 {
-    writing-mode: vertical-rl;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
+    writing-mode: vertical-lr;
 }
 
 .collBtn {
-    background-color: rgba(var(--dark), 0.5);
-    color: rgb(var(--light));
+    font-family: 'Abril Fatface', cursive;
+    color: rgba(var(--dark), 0.85);
+    text-shadow: -1px 0 rgb(var(--light)), 0 1px rgb(var(--light)), 1px 0 rgb(var(--light)), 0 -1px rgb(var(--light));
+    background-color: rgba(var(--med), 0.7);
     display: flex;
-    justify-content: left;
+    justify-content: right;
     align-items: center;
-    transition: color 0.2s ease-in-out, padding 0.2s ease-in-out, text-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out;
     flex: 1;
-    padding-left: 2rem;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding: 0.5rem clamp(4rem, 8vw, 6rem) 0.5rem 0;
+    font-size: clamp(1rem, 2vw, 2rem);
+    letter-spacing: 0.1rem;
     margin-top: 2px;
 }
 
@@ -107,8 +114,8 @@ main {
     margin-top: 0;
 }
 
-.collBtn:after {
-    content: "\f0da";
+.collBtn::before {
+    content: "\f0d9";
     font: var(--fa-font-solid);
     margin-left: 1rem;
     transition: transform 0.3s ease-in-out;
@@ -116,18 +123,19 @@ main {
 
 .collBtn i {
     padding: 0 1rem;
+    font-size: smaller;
 }
 
 .collBtn:hover {
     cursor: pointer;
     color: rgb(var(--dark));
-    background: rgb(var(--dark));
+    background-color: rgba(var(--dark), 0.7);
     text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
 }
 
-.collBtn:hover::after {
-    color: rgb(var(--dark));
-    transform: scale(1.25) translatex(0.5rem);
+.collBtn:hover::before {
+    color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.25) translate(-0.5rem, 0);
 }
 
 .content {
@@ -138,6 +146,23 @@ main {
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
+.content h4 {
+    font-family: 'Abril Fatface', cursive;
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.content h5 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.content ul {
+    padding: 0 1.25rem;
+    line-height: 2rem;
+    list-style: circle;
+}
+
 .innerContent {
     display: flex;
 }
@@ -146,43 +171,51 @@ main {
     margin-bottom: 1rem;
 }
 
-.picture img {
-    width: 100%;
-    margin-right: 2rem;
-}
-
 .activeBtn {
     color: rgb(var(--dark));
-    background: rgb(var(--dark));
+    background-color: rgba(var(--dark), 0.7);
     text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
-    box-shadow: 0 1rem 1rem -0.5rem rgba(var(--dark), 0.65);
-    z-index: 2;
-    margin-top: 0;
 }
 
-.activeBtn:after, .activeBtn:hover::after {
-    transform: rotate(90deg) translate(0.5rem, -0.5rem) scale(1.25);
+.activeBtn:hover {
     color: rgb(var(--dark));
+    background-color: rgba(var(--dark), 0.7);
+}
+
+.activeBtn::before, .activeBtn:hover::before {
+    transform: rotate(-90deg) translate(-0.5rem, -1rem) scale(1.25);
 }
 
 .activeContent {
     overflow-y: scroll;
     opacity: 1;
     color: rgb(var(--light));
-    background-color: rgba(var(--dark), 0.75);
-    padding: 1rem 2rem 1rem 3rem;
+    background-color: rgba(var(--dark), 0.4);
+    padding: clamp(2rem, 4vw, 3rem) clamp(4rem, 8vw, 6rem) 2rem clamp(4rem, 8vw, 6rem);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    border-top: 2px solid black;
+    border-left: 2px solid rgb(var(--popGreen));
 }
 
-.activeContent h4 {
-    font-family: 'Abril Fatface', cursive;
-    border-bottom: 1px dashed rgb(var(--popGreen));
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+@media screen and (max-height: 650px) {
+    .headText h1 {
+        font-size: clamp(2rem, 6vh, 3rem);
+    }
+    .headText h2 {
+        font-size: clamp(1rem, 3vh, 2rem);
+    }
+    .social {
+        font-size: clamp(1rem, 3vh, 2.5rem);
+    }
+    .collBtn {
+        font-size: clamp(1rem, 3vh, 2rem);
+    }
 }
 
 @media screen and (max-width: 600px) {
     body {
         flex-direction: column;
+        padding: 0.25rem;
     }
 
     main {
@@ -194,6 +227,7 @@ main {
         flex-direction: row;
         text-align: left;
         min-height: 10vh;
+        border-radius: 0;
     }
 
     .headText {
@@ -207,6 +241,7 @@ main {
     }
 
     .headText h1 {
+
         text-shadow: -2px 0 rgb(var(--med)), 0 2px rgb(var(--med)), 2px 0 rgb(var(--med)), 0 -2px rgb(var(--med));
     }
 
@@ -219,7 +254,7 @@ main {
     }
 
     .collBtn {
-        padding: 0;
+        padding: 0 0.9rem;
         margin-top: 1px;
     }
 
@@ -231,18 +266,9 @@ main {
         font-size: 0.9rem;
     }
 
-    .activeBtn {
-        margin-top: 0;
-    }
-
-    .activeBtn:first-of-type {
-        margin-top: 1px;
-    }
-
     .activeContent {
-        padding: 0.5rem;
+        padding: 0.5rem 0.9rem;
         font-size: 0.9rem;
-        background-color: rgba(var(--dark), 0.75);
     }
 
     .activeContent h4 {
