@@ -1,5 +1,14 @@
 const sectionBtns = document.querySelectorAll(".collBtn");
 const btnArr = Array.from(sectionBtns);
+const aboutBtn = document.getElementById("aboutBtn");
+const aboutCont = document.getElementById("About");
+
+setTimeout(() => {
+    aboutBtn.classList.add("activeBtn")
+    aboutCont.classList.add("activeContent")
+    aboutCont.style.maxHeight = ((aboutCont.scrollHeight + 128)+ "px");
+},1000)
+
 
 //loop over btn array
 for (let i = 0; i < btnArr.length; i++) {

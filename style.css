@@ -31,6 +31,23 @@ main {
     flex-direction: column;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    opacity: 0;
+    animation: mainFadeIn 500ms linear 250ms forwards;
+}
+
+@keyframes mainFadeIn {
+    0% {
+        width: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
 }
 
 header {
@@ -39,10 +56,31 @@ header {
     justify-content: space-between;
     align-items: center;
     text-align: right;
-    background-color: rgba(var(--dark), 0.7);
+    background-color: rgba(var(--dark));
     border-radius: 1rem 0 0 1rem;
     border: 1px solid black;
     border-right: none;
+    animation: headFadeIn 500ms linear 50ms forwards;
+    opacity: 0;
+}
+
+@keyframes headFadeIn {
+    0% {
+        opacity: 0;
+        margin: -10rem 0;
+        height: 0;
+        padding: 50% 0;
+        overflow: hidden;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        margin: 0;
+        height: 100%;
+        opacity: 1;
+        padding: 0;
+    }
 }
 
 .headText {
@@ -107,7 +145,7 @@ header h1, header h2 {
     padding: 0.5rem clamp(4rem, 8vw, 6rem) 0.5rem 0;
     font-size: clamp(1rem, 2vw, 2rem);
     letter-spacing: 0.1rem;
-    margin-top: 2px;
+    margin: 2px 0 0 0;
 }
 
 .collBtn:first-of-type {
@@ -117,7 +155,7 @@ header h1, header h2 {
 .collBtn::before {
     content: "\f0d9";
     font: var(--fa-font-solid);
-    margin-left: 1rem;
+    margin: 0.25rem 0 0 1rem;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -135,7 +173,7 @@ header h1, header h2 {
 
 .collBtn:hover::before {
     color: rgba(0, 0, 0, 0.9);
-    transform: scale(1.25) translate(-0.5rem, 0);
+    transform: scale(1.25) translate(-1rem, 0);
 }
 
 .content {
@@ -144,11 +182,12 @@ header h1, header h2 {
     opacity: 0;
     overflow-y: hidden;
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+    background-color: rgb(var(--light));
 }
 
 .content h4 {
     font-family: 'Abril Fatface', cursive;
-    margin-bottom: 0.5rem;
+    margin: 1rem 0;
     font-size: clamp(1.25rem, 2vw, 1.75rem);
 }
 
@@ -159,7 +198,6 @@ header h1, header h2 {
 
 .content ul {
     padding: 0 1.25rem;
-    line-height: 2rem;
     list-style: circle;
 }
 
@@ -171,10 +209,18 @@ header h1, header h2 {
     margin-bottom: 1rem;
 }
 
+.picture::after {
+    content: "\f007";
+    font: var(--fa-font-solid);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    margin: 0 clamp(1.25rem, 2vw, 1.75rem) 0 0;
+}
+
 .activeBtn {
     color: rgb(var(--dark));
     background-color: rgba(var(--dark), 0.7);
     text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
+    border-left: 1px dashed rgb(var(--popGreen));
 }
 
 .activeBtn:hover {
@@ -183,7 +229,7 @@ header h1, header h2 {
 }
 
 .activeBtn::before, .activeBtn:hover::before {
-    transform: rotate(-90deg) translate(-0.5rem, -1rem) scale(1.25);
+    transform: rotate(-90deg) translate(-1rem, -1.5rem) scale(1.25);
 }
 
 .activeContent {
@@ -191,10 +237,9 @@ header h1, header h2 {
     opacity: 1;
     color: rgb(var(--light));
     background-color: rgba(var(--dark), 0.4);
-    padding: clamp(2rem, 4vw, 3rem) clamp(4rem, 8vw, 6rem) 2rem clamp(4rem, 8vw, 6rem);
+    padding: 1rem clamp(4rem, 8vw, 6rem);
     font-size: clamp(0.9rem, 2vw, 1rem);
-    border-top: 2px solid black;
-    border-left: 2px solid rgb(var(--popGreen));
+    border-left: 1px dashed rgb(var(--popGreen));
 }
 
 @media screen and (max-height: 650px) {
@@ -215,7 +260,7 @@ header h1, header h2 {
 @media screen and (max-width: 600px) {
     body {
         flex-direction: column;
-        padding: 0.25rem;
+        padding: 0;
     }
 
     main {
@@ -226,8 +271,26 @@ header h1, header h2 {
     header {
         flex-direction: row;
         text-align: left;
-        min-height: 10vh;
         border-radius: 0;
+    }
+
+    @keyframes headFadeIn {
+        0% {
+            opacity: 0;
+            margin: -10rem 0;
+            height: 0;
+            padding: 50% 0;
+            overflow: hidden;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            margin: 0;
+            min-height: 5rem;
+            opacity: 1;
+            padding: 0;
+        }
     }
 
     .headText {
@@ -254,7 +317,7 @@ header h1, header h2 {
     }
 
     .collBtn {
-        padding: 0 0.9rem;
+        padding: 0.5rem 0.9rem;
         margin-top: 1px;
     }
 
@@ -269,11 +332,25 @@ header h1, header h2 {
     .activeContent {
         padding: 0.5rem 0.9rem;
         font-size: 0.9rem;
+        border-top: none;
     }
 
     .activeContent h4 {
         padding-top: 1rem;
-        font-size: 1rem;
+        text-align: left;
     }
-
+    @media screen and (max-height: 650px) {
+        .headText h1 {
+            font-size: 2rem;
+        }
+        .headText h2 {
+            font-size: 1rem;
+        }
+        .social {
+            font-size: 1rem;
+        }
+        .collBtn {
+            font-size: 1rem;
+        }
+    }
 }
