@@ -37,12 +37,10 @@ for (let i = 0; i < btnArr.length; i++) {
 
         //if maxHeight is set
         if (content.style.maxHeight) {
-            setTimeout(() => {
                 content.style.maxHeight = null;
                 this.classList.remove('activeBtn');
                 content.classList.remove('activeContent');
                 this.style.color = smallFont
-            }, 150)
 
         } else {
             //if maxHeight not set, give a maxHeight of contents vertical height
