@@ -9,6 +9,10 @@ const contactBtn = document.getElementById("contactBtn");
 const smallFont = 'clamp(0.75rem, 1.5vw, 1rem)';
 const largeFont = 'clamp(1.25rem, 2vw, 2.25rem)';
 
+window.onload = setTimeout(() => {
+    window.scrollTo(0, 1)
+}, 0);
+
 setTimeout(() => {
     aboutBtn.classList.add("activeBtn")
     projectBtn.style.fontSize = smallFont
@@ -42,10 +46,10 @@ for (let i = 0; i < btnArr.length; i++) {
 
         //if maxHeight is set
         if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                content.classList.remove("activeContent");
-                this.classList.remove("activeBtn");
-                this.style.color = smallFont
+            content.style.maxHeight = null;
+            content.classList.remove("activeContent");
+            this.classList.remove("activeBtn");
+            this.style.color = smallFont
         } else {
             //if maxHeight not set, give a maxHeight of contents vertical height
             //timeout allows for collapse animation to happen first
