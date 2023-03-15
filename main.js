@@ -28,21 +28,21 @@ for (let i = 0; i < btnArr.length; i++) {
         //add active class to clicked button       
         content.classList.add('activeContent');
         this.classList.add('activeBtn');
+        //remove active class from button not clicked and give large font to rest
         filteredBtns.forEach((btn) => {
             getNextElement(btn).style.maxHeight = null;
             btn.classList.remove('activeBtn');
             getNextElement(btn).classList.remove('activeContent');
             btn.style.fontSize = largeFont;
         });
-        //if maxHeight is set
+        //if maxHeight is set on clicked button, collapse content and remove active classes
         if (content.style.maxHeight) {
             content.style.maxHeight = null;
             this.classList.remove('activeBtn');
             content.classList.remove('activeContent');
-            this.style.color = smallFont
         } else {
-            //if maxHeight not set, give a maxHeight of contents vertical height
-            //timeout allows for collapse animation to happen first
+            //if maxHeight not set, give a maxHeight of the contents scroll height
+            //timeout allows for collapse animation to happen first before the next open animation
             setTimeout(() => {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 this.style.fontSize = largeFont;
