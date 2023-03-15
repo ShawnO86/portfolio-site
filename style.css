@@ -40,7 +40,7 @@ a {
 body {
     height: 100vh;
     display: flex;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #fff;
     background-image: url(./assets/ep_naturalblack.webp);
     padding: 0;
@@ -87,7 +87,7 @@ header {
     animation: headFadeIn 500ms linear 250ms forwards;
     opacity: 0;
     background-color: rgba(var(--blueRGB), 0.75);
-    padding: 0 clamp(0.5rem, 2vw, 1rem);
+    width: clamp(10rem, 20vw, 20rem);
 }
 
 @keyframes headFadeIn {
@@ -133,20 +133,17 @@ header {
 }
 
 .headText h1 {
-    font-family: 'Abril Fatface', cursive;
-    text-shadow: -2px 0 0 var(--purp), 0 2px 0 var(--purp), 2px 0 0 var(--purp), 0 -2px 0 var(--purp);
+    font-family: 'Space Mono', monospace;
+    text-shadow: -2px 0 0 var(--tan), 0 2px 0 var(--tan), 2px 0 0 var(--tan), 0 -2px 0 var(--tan);
     color: var(--blue);
     transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
-    font-size: clamp(2rem, 4vw, 4rem);
-    letter-spacing: 0.25rem;
-}
-
-.headText h1:hover {
-    text-shadow: -2px 0 0 #fff, 0 2px 0 #fff, 2px 0 0 #fff, 0 -2px 0 #fff;
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
+    letter-spacing: 0.25vh;
+    cursor: pointer;
 }
 
 .headText h2 {
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1rem, 2.25vw, 1.75rem);
     color: rgba(255, 255, 255, 0.25);
 }
 
@@ -156,21 +153,22 @@ header h1, header h2 {
 }
 
 .collBtn {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Space Mono', monospace;
     display: flex;
     justify-content: right;
     align-items: center;
     flex: 1;
-    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out, opacity 0.2s ease-in-out, letter-spacing 0.2s ease-in-out;
     font-size: clamp(1rem, 2vw, 2rem);
-    letter-spacing: 0.15rem;
     margin: 1vh 0 0 0;
     padding: 0.5rem clamp(1rem, 2vw, 2.5rem) 0.5rem 0;
     text-shadow: -1px 0 0 #fff, 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff;
-    background-color: rgb(var(--blueRGB));
+    background-color: rgba(var(--blueRGB), 0.5);
     color: var(--blue);
     border-right: 0.5rem solid rgba(var(--tanRGB), 0.75);
-    opacity: 0.5;
+    opacity: 0.75;
+    letter-spacing: 0.25vw;
+    position: relative;
 }
 
 .collBtn:first-of-type {
@@ -180,8 +178,10 @@ header h1, header h2 {
 .collBtn::before {
     content: "\f0d9";
     font: var(--fa-font-solid);
-    margin: 0.25rem 0 0 1rem;
-    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    transition: transform 0.4s ease-in-out, right 0.5s ease-in-out, opacity 0.25s ease-in-out;
+    right: 10vw;
+    opacity: 0;
 }
 
 .collBtn i {
@@ -192,10 +192,15 @@ header h1, header h2 {
 .collBtn:hover {
     cursor: pointer;
     opacity: 0.75;
+    letter-spacing: 0.5vw;
+    background-color: rgba(var(--blueRGB), 1);
+    text-shadow: -2px 0 0 var(--tan), 0 2px 0 var(--tan), 2px 0 0 var(--tan), 0 -2px 0 var(--tan);
 }
 
 .collBtn:hover::before {
-    transform: scale(1.25) translate(-1rem, 0);
+    transform: scale(1.25);
+    right: 95%;
+    opacity: 1;
 }
 
 .content {
@@ -227,7 +232,7 @@ header h1, header h2 {
 } 
 
 .content h4 {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Space Mono', monospace;
     margin: 1rem 0;
     font-size: clamp(1.25rem, 2vw, 1.75rem);
 }
@@ -247,6 +252,7 @@ header h1, header h2 {
 
 #Projects {
     display: flex;
+    justify-content: space-between;
 }
 
 #Projects h4 {
@@ -262,16 +268,33 @@ header h1, header h2 {
 }
 
 .activeBtn, .activeBtn:hover {
-    text-shadow: -2px 0 0 var(--purp), 0 2px 0 var(--purp), 2px 0 0 var(--purp), 0 -2px 0 var(--purp);
-    color: var(--blue);
     background-color: rgba(var(--blueRGB), 0.75);
+    text-shadow: -1px 0 0 var(--tan), 0 1px 0 var(--tan), 1px 0 0 var(--tan), 0 -1px 0 var(--tan);
     opacity: 1;
     z-index: 2;
     margin: 0;
+    letter-spacing: 0.5vw;
 }
 
 .activeBtn::before, .activeBtn:hover::before {
-    transform: rotate(-90deg) translate(-1.5rem, -1.5rem) scale(1.25);
+    transform: rotate(-90deg) translate(-1.5rem, 0) scale(1.25);
+    animation: arrowActive 500ms linear 150ms forwards;
+}
+
+@keyframes arrowActive {
+    0% {
+        right: 95%;
+        transform: none;
+    } 
+    30% {
+        transform: rotate(-90deg) translate(-1.5rem, 0) scale(1.25);
+        right: 95%;
+    }
+    100% {
+        transform: rotate(-90deg) translate(-1.5rem, 0) scale(1.25);
+        right: 0.5vw;
+        opacity: 1;
+    }
 }
 
 .activeContent {
