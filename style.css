@@ -1,16 +1,36 @@
 :root {
-    --popGreen: 185, 255, 8;
-    --dark: 33, 33, 33;
-    --med: 110, 110, 110;
-    --light: 240, 240, 240;
+    --dark: #07090D;
+    --darkRGB: 7, 9, 13;
+    --purp: #2e2859;
+    --purpRGB: 46, 40, 89;
+    --blue: #151C26;
+    --blueRGB: 21, 28, 38;
+    --tan: #735928;
+    --tanRGB: 115, 89, 40;
 }
-
-
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    /* Firefox scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color:rgba(var(--tanRGB), 0.5) rgba(var(--tanRGB), 0.3);
+}
+
+/* Webkit browser scrollbar*/
+
+*::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(var(--tanRGB), 0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--tanRGB), 0.5);
+    border-radius: 0;
 }
 
 a {
@@ -19,18 +39,19 @@ a {
 
 body {
     height: 100vh;
-    padding: clamp(0.5rem, 1vw, 1rem) 0 clamp(0.5rem, 1vw, 1rem) clamp(0.5rem, 2vw, 2rem);
     display: flex;
-    background-color: black;
-    background-image: url(./assets/prism.png);
     font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-image: url(./assets/ep_naturalblack.webp);
+    padding: 0;
+    border: 0.5rem solid var(--dark);
+    border-left: clamp(0.5rem, 2vw, 1rem) solid var(--dark);
+    border-right: none;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
     opacity: 0;
     animation: mainFadeIn 500ms linear 250ms forwards;
 }
@@ -41,12 +62,19 @@ main {
         opacity: 0;
         overflow: hidden;
     }
+
     50% {
+        width: 0;
         opacity: 0;
+        border: none;
+        overflow: hidden;
     }
+
     100% {
+        overflow: normal;
         width: 100%;
         opacity: 1;
+
     }
 }
 
@@ -56,36 +84,35 @@ header {
     justify-content: space-between;
     align-items: center;
     text-align: right;
-    background-color: rgba(var(--dark));
-    border-radius: 1rem 0 0 1rem;
-    border: 1px solid black;
-    border-right: none;
-    animation: headFadeIn 500ms linear 50ms forwards;
+    animation: headFadeIn 500ms linear 250ms forwards;
     opacity: 0;
+    background-color: rgba(var(--blueRGB), 0.75);
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
 @keyframes headFadeIn {
     0% {
         opacity: 0;
-        margin: -10rem 0;
-        height: 0;
-        padding: 50% 0;
         overflow: hidden;
+        border: none;
     }
+
     50% {
         opacity: 0;
+        border: none;
     }
+
     100% {
-        margin: 0;
-        height: 100%;
         opacity: 1;
-        padding: 0;
+
     }
 }
 
 .headText {
     display: flex;
-    padding: 2rem clamp(1.5rem, 5vw, 5rem);
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(1rem, 2vw, 2.5rem) clamp(1rem, 2vw, 2.5rem);
 }
 
 .social {
@@ -96,56 +123,54 @@ header {
 }
 
 .social i {
-    color: rgb(var(--med));
     transition: color 0.2s ease-in-out;
+    color: rgba(255, 255, 255, 0.25);
 }
 
 .social i:hover {
     cursor: pointer;
-    color: rgb(var(--light));
+    color: #fff;
 }
 
 .headText h1 {
     font-family: 'Abril Fatface', cursive;
-    color: rgba(var(--dark), 1);
-    text-shadow: -2px 0 rgb(var(--med)), 0 2px rgb(var(--med)), 2px 0 rgb(var(--med)), 0 -2px rgb(var(--med));
+    text-shadow: -2px 0 0 var(--purp), 0 2px 0 var(--purp), 2px 0 0 var(--purp), 0 -2px 0 var(--purp);
+    color: var(--blue);
     transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
     font-size: clamp(2rem, 4vw, 4rem);
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.25rem;
 }
 
 .headText h1:hover {
-    color: rgb(var(--dark));
-    text-shadow: -2px 0 rgb(var(--popGreen)), 0 2px rgb(var(--popGreen)), 2px 0 rgb(var(--popGreen)), 0 -2px rgb(var(--popGreen));
+    text-shadow: -2px 0 0 #fff, 0 2px 0 #fff, 2px 0 0 #fff, 0 -2px 0 #fff;
 }
 
 .headText h2 {
-    color: rgb(var(--med));
     font-size: clamp(1rem, 2vw, 2rem);
-}
-
-.headText h1, .headText h2 {
-    transform: rotate(180deg);
+    color: rgba(255, 255, 255, 0.25);
 }
 
 header h1, header h2 {
     writing-mode: vertical-lr;
+    transform: rotate(180deg);
 }
 
 .collBtn {
     font-family: 'Abril Fatface', cursive;
-    color: rgba(var(--dark), 0.85);
-    text-shadow: -1px 0 rgb(var(--light)), 0 1px rgb(var(--light)), 1px 0 rgb(var(--light)), 0 -1px rgb(var(--light));
-    background-color: rgba(var(--med), 0.7);
     display: flex;
     justify-content: right;
     align-items: center;
-    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out;
     flex: 1;
-    padding: 0.5rem clamp(4rem, 8vw, 6rem) 0.5rem 0;
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out, opacity 0.2s ease-in-out;
     font-size: clamp(1rem, 2vw, 2rem);
-    letter-spacing: 0.1rem;
-    margin: 2px 0 0 0;
+    letter-spacing: 0.15rem;
+    margin: 1vh 0 0 0;
+    padding: 0.5rem clamp(1rem, 2vw, 2.5rem) 0.5rem 0;
+    text-shadow: -1px 0 0 #fff, 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff;
+    background-color: rgb(var(--blueRGB));
+    color: var(--blue);
+    border-right: 0.5rem solid rgba(var(--tanRGB), 0.75);
+    opacity: 0.5;
 }
 
 .collBtn:first-of-type {
@@ -166,24 +191,40 @@ header h1, header h2 {
 
 .collBtn:hover {
     cursor: pointer;
-    color: rgb(var(--dark));
-    background-color: rgba(var(--dark), 0.7);
-    text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
+    opacity: 0.75;
 }
 
 .collBtn:hover::before {
-    color: rgba(0, 0, 0, 0.9);
     transform: scale(1.25) translate(-1rem, 0);
 }
 
 .content {
     text-align: justify;
     max-height: 0;
-    opacity: 0;
-    overflow-y: hidden;
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
-    background-color: rgb(var(--light));
+    max-width: 0;
+    width: 0;
+    margin: 0;
+    overflow: hidden;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    transition: max-height 0.5s ease-in-out;
+    animation: activeContOut 0.2s ease-in;
 }
+
+ @keyframes activeContOut {
+    0% {
+        padding: 0 clamp(1.5rem, 5vw, 5rem) 3vh clamp(1.5rem, 5vw, 5rem);
+        color: rgba(255, 255, 255, 0.85);
+        width: 100%;
+        max-width: 100%;
+        opacity: 1;
+    }
+    100% {
+        color: rgba(255, 255, 255, 0.5);
+        padding: 0;
+        width: 0;
+        opacity: 0;
+    }
+} 
 
 .content h4 {
     font-family: 'Abril Fatface', cursive;
@@ -196,11 +237,6 @@ header h1, header h2 {
     font-size: 1rem;
 }
 
-.content ul {
-    padding: 0 1.25rem;
-    list-style: circle;
-}
-
 .innerContent {
     display: flex;
 }
@@ -209,148 +245,70 @@ header h1, header h2 {
     margin-bottom: 1rem;
 }
 
-.picture::after {
-    content: "\f007";
-    font: var(--fa-font-solid);
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-    margin: 0 clamp(1.25rem, 2vw, 1.75rem) 0 0;
+#Projects {
+    display: flex;
 }
 
-.activeBtn {
-    color: rgb(var(--dark));
-    background-color: rgba(var(--dark), 0.7);
-    text-shadow: -1px 0 0 rgb(var(--popGreen)), 0 1px 0 rgb(var(--popGreen)), 1px 0 0 rgb(var(--popGreen)), 0 -1px 0 rgb(var(--popGreen));
-    border-left: 1px dashed rgb(var(--popGreen));
+#Projects h4 {
+    flex: 1;
 }
 
-.activeBtn:hover {
-    color: rgb(var(--dark));
-    background-color: rgba(var(--dark), 0.7);
+.projectBox {
+    width: 10rem;
+    height: 10rem;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.activeBtn, .activeBtn:hover {
+    text-shadow: -2px 0 0 var(--purp), 0 2px 0 var(--purp), 2px 0 0 var(--purp), 0 -2px 0 var(--purp);
+    color: var(--blue);
+    background-color: rgba(var(--blueRGB), 0.75);
+    opacity: 1;
+    z-index: 2;
+    margin: 0;
 }
 
 .activeBtn::before, .activeBtn:hover::before {
-    transform: rotate(-90deg) translate(-1rem, -1.5rem) scale(1.25);
+    transform: rotate(-90deg) translate(-1.5rem, -1.5rem) scale(1.25);
 }
 
 .activeContent {
-    overflow-y: scroll;
-    opacity: 1;
-    color: rgb(var(--light));
-    background-color: rgba(var(--dark), 0.4);
-    padding: 1rem clamp(4rem, 8vw, 6rem);
     font-size: clamp(0.9rem, 2vw, 1rem);
-    border-left: 1px dashed rgb(var(--popGreen));
+    border: 1px dashed var(--purp);
+    border-right: none;
+    margin-bottom: -1vh;
+    transition: margin 1s ease, max-height 1s ease;
+    animation: activeContIn 400ms linear 200ms forwards;
 }
 
-@media screen and (max-height: 650px) {
-    .headText h1 {
-        font-size: clamp(2rem, 6vh, 3rem);
-    }
-    .headText h2 {
-        font-size: clamp(1rem, 3vh, 2rem);
-    }
-    .social {
-        font-size: clamp(1rem, 3vh, 2.5rem);
-    }
-    .collBtn {
-        font-size: clamp(1rem, 3vh, 2rem);
-    }
+.activeContent:last-of-type { 
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
-@media screen and (max-width: 600px) {
-    body {
-        flex-direction: column;
+@keyframes activeContIn {
+    0% {
+        color: rgba(255, 255, 255, 0.5);
         padding: 0;
+        opacity: 0;
+        width: 0%;
+        height: 0%;
     }
-
-    main {
-        max-height: 90vh;
+    50% {
+        color: rgba(255, 255, 255, 0.75);
         height: 100%;
+        width: 90%;
+        opacity: 0.25;
     }
-
-    header {
-        flex-direction: row;
-        text-align: left;
-        border-radius: 0;
+    100% {
+        padding: 0 clamp(1.5rem, 5vw, 5rem) 3vh clamp(1.5rem, 5vw, 5rem);
+        color: rgba(255, 255, 255, 0.85);
+        border-left: 1px dashed var(--purp);
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        overflow-y: scroll;
     }
-
-    @keyframes headFadeIn {
-        0% {
-            opacity: 0;
-            margin: -10rem 0;
-            height: 0;
-            padding: 50% 0;
-            overflow: hidden;
-        }
-        50% {
-            opacity: 0;
-        }
-        100% {
-            margin: 0;
-            min-height: 5rem;
-            opacity: 1;
-            padding: 0;
-        }
-    }
-
-    .headText {
-        padding: 0.5rem 0 0.5rem 0.5rem;
-        flex-direction: column;
-    }
-
-    .social {
-        flex-direction: column;
-        padding: 0.5rem 0.5rem 0.5rem 0;
-    }
-
-    .headText h1 {
-
-        text-shadow: -2px 0 rgb(var(--med)), 0 2px rgb(var(--med)), 2px 0 rgb(var(--med)), 0 -2px rgb(var(--med));
-    }
-
-    .headText h1, .headText h2 {
-        transform: rotate(360deg);
-    }
-
-    header h1, header h2 {
-        writing-mode: horizontal-tb;
-    }
-
-    .collBtn {
-        padding: 0.5rem 0.9rem;
-        margin-top: 1px;
-    }
-
-    .collBtn i {
-        padding: 0 0.5rem;
-    }
-
-    .content {
-        font-size: 0.9rem;
-    }
-
-    .activeContent {
-        padding: 0.5rem 0.9rem;
-        font-size: 0.9rem;
-        border-top: none;
-    }
-
-    .activeContent h4 {
-        padding-top: 1rem;
-        text-align: left;
-    }
-    @media screen and (max-height: 650px) {
-        .headText h1 {
-            font-size: 2rem;
-        }
-        .headText h2 {
-            font-size: 1rem;
-        }
-        .social {
-            font-size: 1rem;
-        }
-        .collBtn {
-            font-size: 1rem;
-        }
-    }
-}
+} 
