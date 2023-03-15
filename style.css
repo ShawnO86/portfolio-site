@@ -15,7 +15,7 @@
     margin: 0;
     /* Firefox scrollbar */
     scrollbar-width: thin;
-    scrollbar-color:rgba(var(--tanRGB), 0.5) rgba(var(--tanRGB), 0.3);
+    scrollbar-color: rgba(var(--tanRGB), 0.5) rgba(var(--tanRGB), 0.3);
 }
 
 /* Webkit browser scrollbar*/
@@ -45,7 +45,6 @@ body {
     background-image: url(./assets/ep_naturalblack.webp);
     padding: 0;
     border: 0.5rem solid var(--dark);
-    border-left: clamp(0.5rem, 2vw, 1rem) solid var(--dark);
     border-right: none;
 }
 
@@ -87,7 +86,8 @@ header {
     animation: headFadeIn 500ms linear 250ms forwards;
     opacity: 0;
     background-color: rgba(var(--blueRGB), 0.75);
-    width: clamp(10rem, 20vw, 20rem);
+    border-right: 2px solid var(--purp);
+    margin-right: 0.25rem;
 }
 
 @keyframes headFadeIn {
@@ -112,7 +112,7 @@ header {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: clamp(1rem, 2vw, 2.5rem) clamp(1rem, 2vw, 2.5rem);
+    padding: clamp(1rem, 2vw, 2.5rem) clamp(1.5rem, 3vw, 3.75rem);
 }
 
 .social {
@@ -139,7 +139,6 @@ header {
     transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
     font-size: clamp(1.5rem, 3.5vw, 3rem);
     letter-spacing: 0.25vh;
-    cursor: pointer;
 }
 
 .headText h2 {
@@ -154,87 +153,66 @@ header h1, header h2 {
 
 .collBtn {
     font-family: 'Space Mono', monospace;
+    font-size: clamp(1.25rem, 2vw, 2.25rem);
+    letter-spacing: 0.15vw;
     display: flex;
     justify-content: right;
     align-items: center;
     flex: 1;
-    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out, opacity 0.2s ease-in-out, letter-spacing 0.2s ease-in-out;
-    font-size: clamp(1rem, 2vw, 2rem);
-    margin: 1vh 0 0 0;
-    padding: 0.5rem clamp(1rem, 2vw, 2.5rem) 0.5rem 0;
-    text-shadow: -1px 0 0 #fff, 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff;
-    background-color: rgba(var(--blueRGB), 0.5);
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 0.2s ease-in-out, letter-spacing 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    padding: 0.5rem calc(10vw + 0.5rem) 0.5rem 10vw;
+    text-shadow: -1px 0 0 var(--tan), 0 1px 0 var(--tan), 1px 0 0 var(--tan), 0 -1px 0 var(--tan);
+    background-color: rgba(var(--blueRGB), 0.25);
     color: var(--blue);
-    border-right: 0.5rem solid rgba(var(--tanRGB), 0.75);
+    border-left: 1px solid rgba(var(--tanRGB), 0.75);
+    border-top: 1px dashed var(--purp);
+    border-bottom: 1px dashed var(--purp);
     opacity: 0.75;
-    letter-spacing: 0.25vw;
-    position: relative;
+    min-height: 4rem;
+    margin-top: 0.25rem;
+}
+
+.collBtn h3 {
+    padding: 0;
+    margin: 0;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .collBtn:first-of-type {
     margin-top: 0;
 }
 
-.collBtn::before {
-    content: "\f0d9";
-    font: var(--fa-font-solid);
-    position: absolute;
-    transition: transform 0.4s ease-in-out, right 0.5s ease-in-out, opacity 0.25s ease-in-out;
-    right: 10vw;
-    opacity: 0;
-}
-
 .collBtn i {
-    padding: 0 1rem;
-    font-size: smaller;
+    padding: 0 0 0 2vw;
 }
 
 .collBtn:hover {
     cursor: pointer;
-    opacity: 0.75;
-    letter-spacing: 0.5vw;
-    background-color: rgba(var(--blueRGB), 1);
-    text-shadow: -2px 0 0 var(--tan), 0 2px 0 var(--tan), 2px 0 0 var(--tan), 0 -2px 0 var(--tan);
-}
-
-.collBtn:hover::before {
-    transform: scale(1.25);
-    right: 95%;
-    opacity: 1;
+    opacity: 0.9;
+    letter-spacing: 0.25vw;
+    background-color: rgba(var(--blueRGB), 0.75);
+    border-left: 2px solid rgba(var(--tanRGB), 1);
 }
 
 .content {
     text-align: justify;
     max-height: 0;
-    max-width: 0;
-    width: 0;
-    margin: 0;
-    overflow: hidden;
+    width: 100%;
     font-size: clamp(0.75rem, 2vw, 1rem);
-    transition: max-height 0.5s ease-in-out;
-    animation: activeContOut 0.2s ease-in;
+    transition: max-height 0.2s ease-in;
+    overflow: hidden;
+    padding: 0 10vw;
+    border-left: 2px solid var(--tan);
+    color: rgba(var(--blueRGB), 0);
 }
-
- @keyframes activeContOut {
-    0% {
-        padding: 0 clamp(1.5rem, 5vw, 5rem) 3vh clamp(1.5rem, 5vw, 5rem);
-        color: rgba(255, 255, 255, 0.85);
-        width: 100%;
-        max-width: 100%;
-        opacity: 1;
-    }
-    100% {
-        color: rgba(255, 255, 255, 0.5);
-        padding: 0;
-        width: 0;
-        opacity: 0;
-    }
-} 
 
 .content h4 {
     font-family: 'Space Mono', monospace;
     margin: 1rem 0;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-size: clamp(1.25rem, 1.5vw, 2rem);
 }
 
 .content h5 {
@@ -252,7 +230,9 @@ header h1, header h2 {
 
 #Projects {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
+    flex-wrap: wrap;
+    gap: 2vw;
 }
 
 #Projects h4 {
@@ -269,69 +249,19 @@ header h1, header h2 {
 
 .activeBtn, .activeBtn:hover {
     background-color: rgba(var(--blueRGB), 0.75);
-    text-shadow: -1px 0 0 var(--tan), 0 1px 0 var(--tan), 1px 0 0 var(--tan), 0 -1px 0 var(--tan);
-    opacity: 1;
+    text-shadow: -2px 0 0 var(--tan), 0 2px 0 var(--tan), 2px 0 0 var(--tan), 0 -2px 0 var(--tan);
     z-index: 2;
-    margin: 0;
-    letter-spacing: 0.5vw;
-}
-
-.activeBtn::before, .activeBtn:hover::before {
-    transform: rotate(-90deg) translate(-1.5rem, 0) scale(1.25);
-    animation: arrowActive 500ms linear 150ms forwards;
-}
-
-@keyframes arrowActive {
-    0% {
-        right: 95%;
-        transform: none;
-    } 
-    30% {
-        transform: rotate(-90deg) translate(-1.5rem, 0) scale(1.25);
-        right: 95%;
-    }
-    100% {
-        transform: rotate(-90deg) translate(-1.5rem, 0) scale(1.25);
-        right: 0.5vw;
-        opacity: 1;
-    }
+    letter-spacing: 0.25vw;
+    border-left: 2px solid rgb(var(--tanRGB));
+    opacity: 1;
+    min-height: 4.5rem;
 }
 
 .activeContent {
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    border: 1px dashed var(--purp);
-    border-right: none;
-    margin-bottom: -1vh;
-    transition: margin 1s ease, max-height 1s ease;
-    animation: activeContIn 400ms linear 200ms forwards;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    transition: max-height 0.2s ease-in, margin 2s ease-in;
+    animation: activeContIn 2s linear 250ms ease-in;
+    padding: 0 10vw;
+    overflow-y: scroll;
+    color: rgba(255, 255, 255, 0.8);
 }
-
-.activeContent:last-of-type { 
-    margin-bottom: 0;
-    border-bottom: none;
-}
-
-@keyframes activeContIn {
-    0% {
-        color: rgba(255, 255, 255, 0.5);
-        padding: 0;
-        opacity: 0;
-        width: 0%;
-        height: 0%;
-    }
-    50% {
-        color: rgba(255, 255, 255, 0.75);
-        height: 100%;
-        width: 90%;
-        opacity: 0.25;
-    }
-    100% {
-        padding: 0 clamp(1.5rem, 5vw, 5rem) 3vh clamp(1.5rem, 5vw, 5rem);
-        color: rgba(255, 255, 255, 0.85);
-        border-left: 1px dashed var(--purp);
-        height: 100%;
-        width: 100%;
-        opacity: 1;
-        overflow-y: scroll;
-    }
-} 
