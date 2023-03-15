@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap');
+
 :root {
     --dark: #07090D;
     --darkRGB: 7, 9, 13;
@@ -38,7 +40,7 @@ a {
 }
 
 body {
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     font-family: 'Roboto', sans-serif;
     color: #fff;
@@ -156,7 +158,7 @@ header h1, header h2 {
     font-size: clamp(1.25rem, 2vw, 2.25rem);
     letter-spacing: 0.15vw;
     display: flex;
-    justify-content: right;
+    justify-content: space-around;
     align-items: center;
     flex: 1;
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 0.2s ease-in-out, letter-spacing 0.3s ease-in-out, font-size 0.3s ease-in-out;
@@ -168,7 +170,7 @@ header h1, header h2 {
     border-top: 1px dashed var(--purp);
     border-bottom: 1px dashed var(--purp);
     opacity: 0.75;
-    min-height: 4rem;
+    min-height: 3rem;
     margin-top: 0.25rem;
 }
 
@@ -176,7 +178,7 @@ header h1, header h2 {
     padding: 0;
     margin: 0;   
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     width: 100%;
 }
@@ -186,7 +188,9 @@ header h1, header h2 {
 }
 
 .collBtn i {
+    font-size: clamp(1rem, 2.25vw, 1.75rem);
     padding: 0 0 0 2vw;
+    text-shadow: -1px 0 0 rgba(255, 255, 255, 0.25), 0 1px 0 rgba(255, 255, 255, 0.25), 1px 0 0 rgba(255, 255, 255, 0.25), 0 -1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .collBtn:hover {
@@ -254,7 +258,7 @@ header h1, header h2 {
     letter-spacing: 0.25vw;
     border-left: 2px solid rgb(var(--tanRGB));
     opacity: 1;
-    min-height: 4.5rem;
+    min-height: 4rem;
 }
 
 .activeContent {
