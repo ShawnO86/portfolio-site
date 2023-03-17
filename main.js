@@ -15,7 +15,7 @@ setTimeout(() => {
     contactBtn.style.fontSize = smallFont
     aboutCont.classList.add('activeContent');
     aboutCont.style.maxHeight = (aboutCont.scrollHeight + 128) + 'px';
-}, 1000)
+}, 900)
 
 //loop over btn array
 for (let i = 0; i < btnArr.length; i++) {

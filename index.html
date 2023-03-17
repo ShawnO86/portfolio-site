@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shawn Osborne's Portfolio, Web Developer, Web Designer, Front-End Developer">
     <title>Collapsible Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <script src="https://kit.fontawesome.com/11151d2983.js" crossorigin="anonymous" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 </head>
 
 <body>
@@ -20,9 +21,9 @@
         </div>
 
         <div class="social">
-            <a href="https://www.linkedin.com/in/shawnosbornedev/" target="_blank"><i
+            <a href="https://www.linkedin.com/in/shawnosbornedev/" target="_blank" aria-label="linkedin"><i
                     class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/ShawnO86" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/ShawnO86" target="_blank" aria-label="github"><i class="fa-brands fa-github"></i></a>
         </div>
     </header>
 
@@ -104,9 +105,9 @@
             <h3>My Projects</h3>
         </div>
         <section class="content" id="Projects">
-            <div class="projectBox">1</div>
-            <div class="projectBox">2</div>
-            <div class="projectBox">3</div>
+            <a href="https://shawno86.github.io/cardGames/"><div class="projectBox"><img src="./assets/blackjackScreen.jpg"> Blackjack 21</div></a>
+            <div class="projectBox"><img src="./assets/htmlOnPage.jpeg">work in progress</div>
+            <div class="projectBox"><img src="./assets/htmlOnPage.jpeg">work in progress</div>
         </section>
 
         <div class="collBtn" id="contactBtn">
@@ -169,7 +170,8 @@
         </section>
     </main>
 
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
+
 </body>
 
 </html>

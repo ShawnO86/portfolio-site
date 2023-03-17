@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Space+Mono:wght@400&display=swap');
 
 :root {
     /* dark mode colors */
@@ -46,7 +46,7 @@ body {
     display: flex;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background-image: url(./assets/ep_naturalblack.webp);
+    background-image: url(./assets/ep_naturalblack.jpg);
     border: 0.5rem solid rgb(var(--darkRGB));
     border-right: none;
 }
@@ -55,25 +55,15 @@ main {
     display: flex;
     flex-direction: column;
     opacity: 0;
-    animation: mainFadeIn 500ms linear 250ms forwards;
+    animation: mainFadeIn 300ms ease-in-out 450ms forwards;
 }
 
 @keyframes mainFadeIn {
     0% {
-        width: 0;
         opacity: 0;
-        overflow: hidden;
-    }
-
-    50% {
-        width: 0;
-        opacity: 0;
-        overflow: hidden;
     }
 
     100% {
-        overflow: normal;
-        width: 100%;
         opacity: 1;
 
     }
@@ -85,7 +75,7 @@ header {
     justify-content: space-between;
     align-items: center;
     text-align: right;
-    animation: headFadeIn 500ms linear 250ms forwards;
+    animation: headFadeIn 400ms linear 200ms forwards;
     opacity: 0;
     background-color: rgba(var(--blueRGB), 0.75);
     border-right: 2px solid rgb(var(--purpRGB));
@@ -95,13 +85,6 @@ header {
 @keyframes headFadeIn {
     0% {
         opacity: 0;
-        overflow: hidden;
-        border: none;
-    }
-
-    50% {
-        opacity: 0;
-        border: none;
     }
 
     100% {
@@ -119,9 +102,9 @@ header {
 
 .social {
     display: flex;
-    padding: 1rem 0.5rem;
-    gap: clamp(0.5rem, 2vw, 1.5rem);
-    font-size: clamp(1rem, 3vw, 2.5rem);
+    padding: 1rem 0.25rem;
+    gap: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 3vw, 3rem);
 }
 
 .social i {
@@ -140,7 +123,6 @@ header {
     letter-spacing: 0.25vh;
     text-shadow: -1px 0 0 rgb(var(--tanRGB)), 0 1px 0 rgb(var(--tanRGB)), 1px 0 0 rgb(var(--tanRGB)), 0 -1px 0 rgb(var(--tanRGB));
     color: rgb(var(--blueRGB));
-    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
 }
 
 .headText h2 {
@@ -156,13 +138,12 @@ header h1, header h2 {
 .collBtn {
     font-family: 'Space Mono', monospace;
     font-size: clamp(1.25rem, 2vw, 2.25rem);
-    letter-spacing: 0.15vw;
-    font-weight: 700;
+    letter-spacing: 0.25vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex: 1;
-    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 0.2s ease-in-out, letter-spacing 0.3s ease-in-out, font-size 0.3s ease-in-out, margin 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
     padding: 0.5rem calc(10vw + 0.5rem) 0.5rem 10vw;
     text-shadow: -1px 0 0 rgb(var(--tanRGB)), 0 1px 0 rgb(var(--tanRGB)), 1px 0 0 rgb(var(--tanRGB)), 0 -1px 0 rgb(var(--tanRGB));
     background-color: rgba(var(--blueRGB), 0.25);
@@ -174,21 +155,21 @@ header h1, header h2 {
 
 .collBtn h3::before {
     font-family: "Font Awesome 5 Free";
-    font-weight: 900;
     content: "\f0d9";
     margin-right: clamp(1.25rem, 2vw, 2.25rem);
     transition: transform 0.3s ease-in-out;
 }
 
-.collBtn:hover h3::before{
+.collBtn:hover h3::before {
     transform: scale(1.25) translateX(-1vw);
 }
 
-.collBtn h3 {  
+.collBtn h3 {
     display: flex;
     justify-content: right;
     align-items: center;
     width: 100%;
+    transition: font-size 0.3s ease-in-out;
 }
 
 .collBtn:first-of-type {
@@ -197,7 +178,6 @@ header h1, header h2 {
 
 .collBtn:hover {
     cursor: pointer;
-    letter-spacing: 0.25vw;
     background-color: rgba(var(--blueRGB), 0.75);
     border-left: 2px solid rgb(var(--tanRGB));
 }
@@ -227,7 +207,7 @@ header h1, header h2 {
 
 .innerContent {
     display: flex;
-    background-color: rgba(var(--darkRGB), 0.25);
+
 }
 
 .innerContent p {
@@ -236,40 +216,49 @@ header h1, header h2 {
 
 #Projects {
     display: flex;
-    justify-content: right;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 2vw;
-}
-
-#Projects h4 {
-    flex: 1;
 }
 
 .projectBox {
     width: 10rem;
     height: 10rem;
-    background-color: #fff;
-    color: #000;
+    background-color: rgba(var(--darkRGB), 0.25);
+    color: #fff;
     border: 1px solid #000;
+    text-align: center;
+    opacity: 0.25;
+}
+
+.projectBox:hover {
+    width: 15rem;
+    height: 15rem;
+    opacity: 1;
+}
+
+.projectBox img {
+    width: 100%;
 }
 
 .activeBtn, .activeBtn:hover {
     background-color: rgba(var(--blueRGB), 0.75);
     z-index: 2;
-    letter-spacing: 0.25vw;
     border-left: 2px solid rgb(var(--tanRGB));
-    opacity: 1;
+    border-bottom: 2px solid rgb(var(--darkRGB));
 }
 
 .activeContent {
     font-size: clamp(0.75rem, 2vw, 1rem);
-    transition: max-height 0.2s ease-in, margin 2s ease-in, color 0.3s ease-in;
-    animation: activeContIn 2s linear 250ms ease-in;
+    transition: max-height 0.2s ease-in, color 0.3s ease-in;
     padding: 0 10vw;
     overflow-y: scroll;
     color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(var(--darkRGB), 0.25);
 }
 
+/* add content in animation?
 @keyframes identifier {
     
-}
+} 
+*/
