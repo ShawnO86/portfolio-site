@@ -148,7 +148,7 @@ header h1, header h2 {
     text-shadow: -1px 0 0 rgb(var(--tanRGB)), 0 1px 0 rgb(var(--tanRGB)), 1px 0 0 rgb(var(--tanRGB)), 0 -1px 0 rgb(var(--tanRGB));
     background-color: rgba(var(--blueRGB), 0.25);
     color: rgb(var(--blueRGB));
-    border-left: 2px solid rgb(var(--purpRGB));
+    border-left: 2px dashed rgb(var(--purpRGB));
     min-height: 2.5rem;
     margin-top: 0.25rem;
 }
@@ -157,7 +157,7 @@ header h1, header h2 {
     font-family: "Font Awesome 5 Free";
     content: "\f0d9";
     margin-right: clamp(1.25rem, 2vw, 2.25rem);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
 .collBtn:hover h3::before {
@@ -169,7 +169,7 @@ header h1, header h2 {
     justify-content: right;
     align-items: center;
     width: 100%;
-    transition: font-size 0.3s ease-in-out;
+    transition: font-size 0.2s ease-in-out;
 }
 
 .collBtn:first-of-type {
@@ -179,7 +179,8 @@ header h1, header h2 {
 .collBtn:hover {
     cursor: pointer;
     background-color: rgba(var(--blueRGB), 0.75);
-    border-left: 2px solid rgb(var(--tanRGB));
+    border-left: 2px dashed rgb(var(--tanRGB));
+    text-shadow: -1px 0 0 rgb(var(--tanRGB)), 0 1px 0 rgb(var(--tanRGB)), 1px 0 0 rgb(var(--tanRGB)), 0 -1px 0 rgb(var(--tanRGB)), -1px 0 2px rgb(var(--tanRGB)), 0 1px 2px rgb(var(--tanRGB)), 1px 0 2px rgb(var(--tanRGB)), 0 -1px 2px rgb(var(--tanRGB));
 }
 
 .content {
@@ -187,7 +188,7 @@ header h1, header h2 {
     max-height: 0;
     width: 100%;
     font-size: clamp(0.75rem, 2vw, 1rem);
-    transition: max-height 0.2s ease-in, color 0.3s ease-in;
+    transition: max-height 0.2s ease-in;
     overflow: hidden;
     padding: 0 10vw;
     border-left: 2px solid rgb(var(--tanRGB));
@@ -245,12 +246,11 @@ header h1, header h2 {
     background-color: rgba(var(--blueRGB), 0.75);
     z-index: 2;
     border-left: 2px solid rgb(var(--tanRGB));
-    border-bottom: 2px solid rgb(var(--darkRGB));
 }
 
 .activeContent {
     font-size: clamp(0.75rem, 2vw, 1rem);
-    transition: max-height 0.2s ease-in, color 0.3s ease-in;
+    transition: max-height 0.2s ease-in;
     padding: 0 10vw;
     overflow-y: scroll;
     color: rgba(255, 255, 255, 0.75);

@@ -46,7 +46,7 @@ for (let i = 0; i < btnArr.length; i++) {
             setTimeout(() => {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 this.style.fontSize = largeFont;
-            }, 300)
+            }, 200)
             //remove maxHeight and active class from buttons NOT clicked on 
             filteredBtns.forEach((btn) => {
                 getNextElement(btn).style.maxHeight = null;
