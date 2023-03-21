@@ -42,11 +42,8 @@ for (let i = 0; i < btnArr.length; i++) {
             content.classList.remove('activeContent');
         } else {
             //if maxHeight not set, give a maxHeight of the contents scroll height
-            //timeout allows for collapse animation to happen first before the next open animation
-            setTimeout(() => {
-                content.style.maxHeight = content.scrollHeight + 'px';
-                this.style.fontSize = largeFont;
-            }, 200)
+            content.style.maxHeight = content.scrollHeight + 'px';
+            this.style.fontSize = largeFont;
             //remove maxHeight and active class from buttons NOT clicked on 
             filteredBtns.forEach((btn) => {
                 getNextElement(btn).style.maxHeight = null;

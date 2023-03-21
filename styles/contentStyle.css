@@ -1,0 +1,100 @@
+.content {
+    text-align: justify;
+    max-height: 0;
+    width: 100%;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+    padding: 0 10vw;
+    border-left: 2px solid rgb(var(--tanRGB));
+    color: rgb(var(--blueRGB));
+}
+
+.content h4 {
+    font-family: 'Space Mono', monospace;
+    margin: 1rem 0;
+    font-size: clamp(1.25rem, 1.5vw, 2rem);
+    transition: color 0.2s ease-in-out;
+}
+
+.content h5 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.innerContent {
+    display: flex;
+    line-height: 1.6;
+}
+
+.innerContent p {
+    margin-bottom: 1rem;
+    clear: both;
+}
+
+.innerContent .picture {
+    float: left;
+    border: 1px dashed rgb(var(--tanRGB));
+    background-color: rgba(var(--blueRGB), 0.75);
+    margin: 0.5rem 1rem 0.5rem 0;
+    transform: translateX(-50vw);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+#Projects {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.projectBox {
+    width: 0;
+    height: 10rem;
+    background-color: rgba(var(--darkRGB), 0.25);
+    color: #fff;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.projectBox img {
+    width: 100%;
+}
+
+.activeContent {
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    padding: 0 10vw;
+    overflow-y: scroll;
+    background-color: rgba(var(--darkRGB), 0.25);
+}
+
+.activeContent h4 {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.25s ease-in-out 0.15s;
+}
+
+.activeContent .innerContent {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.25s ease-in-out 0.15s;
+}
+
+.activeContent .innerContent .picture {
+    height: 10rem;
+    width: 8rem;
+    animation: picIn 0.3s ease-in-out 0.35s forwards;
+}
+
+@keyframes picIn {
+    0% {
+        transform: translateX(-50vw);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
