@@ -1,5 +1,5 @@
 .collBtn {
-    font-size: (1.25rem, 2vw, 2.25rem);
+    font-size: clamp(1.25rem, 2vw, 2.25rem);
     text-align: left;
     padding: 0.5rem 15vw 0.5rem 12vw;
     width: 100%;
