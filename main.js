@@ -10,6 +10,7 @@ const largeFont = 'clamp(1.25rem, 2vw, 2.25rem)';
 const getNextElement = (button) => button.nextElementSibling;
 
 setTimeout(() => {
+    aboutBtn.style.fontSize = largeFont;
     aboutBtn.classList.add('activeBtn');
     projectBtn.style.fontSize = smallFont
     contactBtn.style.fontSize = smallFont
