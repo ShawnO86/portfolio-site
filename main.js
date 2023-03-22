@@ -9,15 +9,6 @@ const largeFont = 'clamp(1.25rem, 2vw, 2.25rem)';
 
 const getNextElement = (button) => button.nextElementSibling;
 
-setTimeout(() => {
-    aboutBtn.style.fontSize = largeFont;
-    aboutBtn.classList.add('activeBtn');
-    projectBtn.style.fontSize = smallFont
-    contactBtn.style.fontSize = smallFont
-    aboutCont.classList.add('activeContent');
-    aboutCont.style.maxHeight = (aboutCont.scrollHeight + 128) + 'px';
-}, 900)
-
 //loop over btn array
 for (let i = 0; i < btnArr.length; i++) {
     //filter out the current button in btn array
@@ -29,7 +20,7 @@ for (let i = 0; i < btnArr.length; i++) {
         //add active class to clicked button       
         content.classList.add('activeContent');
         this.classList.add('activeBtn');
-        //remove active class from button not clicked and give large font to rest
+        //remove active class from button not clicked and give large font to all other
         filteredBtns.forEach((btn) => {
             getNextElement(btn).style.maxHeight = null;
             btn.classList.remove('activeBtn');
@@ -43,8 +34,11 @@ for (let i = 0; i < btnArr.length; i++) {
             content.classList.remove('activeContent');
         } else {
             //if maxHeight not set, give a maxHeight of the contents scroll height
-            content.style.maxHeight = content.scrollHeight + 'px';
-            this.style.fontSize = largeFont;
+            setTimeout(() => {
+                content.style.maxHeight = (content.scrollHeight + 200) + 'px';
+                this.style.fontSize = largeFont;
+            }, 500)
+
             //remove maxHeight and active class from buttons NOT clicked on 
             filteredBtns.forEach((btn) => {
                 getNextElement(btn).style.maxHeight = null;

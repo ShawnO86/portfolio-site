@@ -1,12 +1,13 @@
 .collBtn {
+    font-size: (1.25rem, 2vw, 2.25rem);
     text-align: left;
-    padding: 0.5rem 10vw 0.5rem 8vw;
+    padding: 0.5rem 15vw 0.5rem 12vw;
     width: 100%;
     flex: 1;
     text-shadow: -1px 0 0 rgb(var(--tanRGB)), 0 1px 0 rgb(var(--tanRGB)), 1px 0 0 rgb(var(--tanRGB)), 0 -1px 0 rgb(var(--tanRGB));
     color: rgb(var(--blueRGB));
-    border-left: 2px dashed rgb(var(--purpRGB));
-    transition: padding 0.2s ease-in-out 0;
+    border-left: 0.125rem dashed rgb(var(--purpRGB));
+    transition: padding 0.2s ease-in-out 0.2s;
     display: flex;
   }
 
@@ -36,18 +37,18 @@
 
 .collBtn:hover {
     cursor: pointer;
-    border-left: 2px dashed rgb(var(--tanRGB));
+    border-left: 0.125rem dashed rgb(var(--tanRGB));
     background-color: rgba(var(--purpRGB), 0.25);
     text-shadow: -1px 0 0 rgb(var(--tanRGB)), 0 1px 0 rgb(var(--tanRGB)), 1px 0 0 rgb(var(--tanRGB)), 0 -1px 0 rgb(var(--tanRGB)), -1px 0 2px rgb(var(--tanRGB)), 0 1px 2px rgb(var(--tanRGB)), 1px 0 2px rgb(var(--tanRGB)), 0 -1px 2px rgb(var(--tanRGB));
 }
 
-.collBtn:last-of-type {
-    border-bottom: none;
+.collBtn:nth-of-type(2), .collBtn:nth-of-type(3) {
+   border-top: 0.125rem solid rgb(var(--purpRGB));
 }
 
 .activeBtn {
     background-color: rgba(var(--purpRGB), 0.25);
-    border-left: 2px dashed rgb(var(--tanRGB));
+    border-left: 0.125rem dashed rgb(var(--tanRGB));
     border-bottom: none;
     text-shadow: -1px 0 0 rgb(var(--tanRGB)), 0 1px 0 rgb(var(--tanRGB)), 1px 0 0 rgb(var(--tanRGB)), 0 -1px 0 rgb(var(--tanRGB)), -1px 0 2px rgb(var(--tanRGB)), 0 1px 2px rgb(var(--tanRGB)), 1px 0 2px rgb(var(--tanRGB)), 0 -1px 2px rgb(var(--tanRGB));
 }
@@ -63,7 +64,7 @@
 }
 
 .activeBtn:hover {
-    border-left: 2px dashed rgb(var(--tanRGB));
+    border-left: 0.125rem dashed rgb(var(--tanRGB));
 }
 
 .activeBtn:hover h3::after {

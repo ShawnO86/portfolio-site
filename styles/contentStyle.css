@@ -3,18 +3,18 @@
     max-height: 0;
     width: 100%;
     font-size: clamp(0.75rem, 2vw, 1rem);
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.4s ease-in, padding 0.2s ease-in 0.4s;
     overflow: hidden;
-    padding: 0 10vw 0 8vw;
-    border-left: 2px solid rgb(var(--tanRGB));
+    padding: 0 15vw 0 12vw;
+    border-left: 0.125rem dashed rgb(var(--tanRGB));
     color: rgb(var(--blueRGB));
 }
 
 .content h4 {
     font-family: 'Space Mono', monospace;
-    margin: 1rem 0;
+    margin: 5rem 0 4rem 0;
     font-size: clamp(1.25rem, 1.5vw, 2rem);
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in 0.2s;
 }
 
 .content h5 {
@@ -24,7 +24,7 @@
 
 .innerContent {
     display: flex;
-    line-height: 1.6;
+    line-height: 2;
 }
 
 .innerContent p {
@@ -36,7 +36,7 @@
     float: left;
     border: 1px dashed rgb(var(--tanRGB));
     background-color: rgba(var(--blueRGB), 0.75);
-    margin: 0.5rem 1rem 0.5rem 0;
+    margin: 0.5rem 2rem 1rem 0;
     transform: translateX(-50vw);
     border-radius: 0.25rem;
     padding: 0.5rem;
@@ -64,25 +64,25 @@
 
 .activeContent {
     font-size: clamp(0.75rem, 2vw, 1rem);
-    padding: 0 10vw 0 8vw;
+    padding: 0 15vw 4rem 12vw;
     overflow-y: scroll;
-    background-color: rgba(var(--darkRGB), 0.2);
+    background-color: rgba(var(--darkRGB), 0.4);
 }
 
 .activeContent h4 {
     color: rgba(255, 255, 255, 0.75);
-    transition: color 0.25s ease-in-out 0.15s;
+    transition: color 0.2s ease-in 0.7s;
 }
 
 .activeContent .innerContent {
     color: rgba(255, 255, 255, 0.75);
-    transition: color 0.3s ease-in-out 0.2s;
+    transition: color 0.25s ease-in 0.7s;
 }
 
 .activeContent .innerContent .picture {
     height: 10rem;
     width: 8rem;
-    animation: picIn 0.3s ease-in-out 0.35s forwards;
+    animation: picIn 0.3s ease-in 0.7s forwards;
 }
 
 @keyframes picIn {
