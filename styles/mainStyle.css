@@ -48,10 +48,8 @@ body {
     display: flex;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background-image: url(../assets/ep_naturalblack.jpg);
+    background-color: rgb(var(--darkRGB));
     overflow-x: hidden;
-    border: 0.5rem solid rgb(var(--purpRGB));
-    border-right: none;
 }
 
 main {
@@ -59,6 +57,9 @@ main {
     flex-direction: column;
     opacity: 0;
     animation: mainFadeIn 350ms ease-in-out 500ms forwards;
+    border-top: 0.5rem solid rgb(var(--purpRGB));
+    border-bottom: 0.5rem solid rgb(var(--purpRGB));
+    background-image: url(../assets/ep_naturalblack.jpg);
 }
 
 @keyframes mainFadeIn {
@@ -69,7 +70,7 @@ main {
 
     60% {
         opacity: 1;
-        transform: translateX(-3rem);
+        transform: translateX(-1rem);
     }
 
     100% {
@@ -87,10 +88,6 @@ header {
     animation: headFadeIn 350ms linear 150ms forwards;
     opacity: 0;
     background-color: rgb(var(--blueRGB));
-    border-right: 2px solid rgb(var(--purpRGB));
-    margin-right: 0.25rem;
-    z-index: 2;
-    margin: 0 1vw 0 0;
     padding: 0 2vw;
 }
 
@@ -100,7 +97,7 @@ header {
         transform: translateY(-100vh);
     }
     60% {
-        transform: translateY(2rem);
+        transform: translateY(-2rem);
     }
     100% {
         opacity: 1;
@@ -126,6 +123,7 @@ header {
 .social i {
     transition: color 0.2s ease-in-out;
     color: rgba(255, 255, 255, 0.3);
+
 }
 
 .social i:hover {

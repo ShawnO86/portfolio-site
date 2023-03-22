@@ -5,7 +5,7 @@
     font-size: clamp(0.75rem, 2vw, 1rem);
     transition: max-height 0.3s ease-in-out;
     overflow: hidden;
-    padding: 0 10vw;
+    padding: 0 10vw 0 8vw;
     border-left: 2px solid rgb(var(--tanRGB));
     color: rgb(var(--blueRGB));
 }
@@ -64,9 +64,9 @@
 
 .activeContent {
     font-size: clamp(0.75rem, 2vw, 1rem);
-    padding: 0 10vw;
+    padding: 0 10vw 0 8vw;
     overflow-y: scroll;
-    background-color: rgba(var(--darkRGB), 0.25);
+    background-color: rgba(var(--darkRGB), 0.2);
 }
 
 .activeContent h4 {
@@ -76,7 +76,7 @@
 
 .activeContent .innerContent {
     color: rgba(255, 255, 255, 0.75);
-    transition: color 0.25s ease-in-out 0.15s;
+    transition: color 0.3s ease-in-out 0.2s;
 }
 
 .activeContent .innerContent .picture {

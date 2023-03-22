@@ -1,6 +1,6 @@
 .collBtn {
     text-align: left;
-    padding: 0.5rem 10vw;
+    padding: 0.5rem 10vw 0.5rem 8vw;
     width: 100%;
     flex: 1;
     text-shadow: -1px 0 0 rgb(var(--tanRGB)), 0 1px 0 rgb(var(--tanRGB)), 1px 0 0 rgb(var(--tanRGB)), 0 -1px 0 rgb(var(--tanRGB));
@@ -9,7 +9,6 @@
     transition: padding 0.2s ease-in-out 0;
     display: flex;
   }
-
 
 .collBtn i {
     display: none;
@@ -47,7 +46,6 @@
 }
 
 .activeBtn {
-    padding: 0.5rem 10vw;
     background-color: rgba(var(--purpRGB), 0.25);
     border-left: 2px dashed rgb(var(--tanRGB));
     border-bottom: none;
