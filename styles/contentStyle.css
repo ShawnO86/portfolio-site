@@ -12,7 +12,7 @@
 
 .content h4 {
     font-family: 'Space Mono', monospace;
-    margin: 5rem 0 4rem 0;
+    margin: 4rem 0 2rem 0;
     font-size: clamp(1.25rem, 1.5vw, 2rem);
     transition: color 0.2s ease-in;
 }
@@ -24,12 +24,12 @@
 
 .innerContent {
     display: flex;
-    line-height: 2;
+    line-height: 1.6;
     margin-bottom: 4rem;
 }
 
 .innerContent p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     clear: both;
 }
 
@@ -46,21 +46,23 @@
 #Projects {
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 2vw;
 }
 
 .projectBox {
-    width: 0;
-    height: 10rem;
-    background-color: rgba(var(--darkRGB), 0.25);
+    background-color: rgba(var(--darkRGB), 0.75);
     color: #fff;
     border: 1px solid #000;
     text-align: center;
+    width: 100%;
+    display: flex;
+    margin: 1rem auto;
 }
 
 .projectBox img {
-    width: 100%;
+    width: 50%;
 }
 
 .activeContent {
