@@ -20,22 +20,22 @@
     padding: 0;
     margin: 0;
     /* Firefox scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(var(--tanRGB), 0.5) rgba(var(--tanRGB), 0.3);
+    scrollbar-width: auto;
+    scrollbar-color: rgba(var(--tanRGB), 1) rgba(var(--tanRGB), 0.5);
 }
 
 /* Webkit browser scrollbar*/
 
 *::-webkit-scrollbar {
-    width: 0.5rem;
+    width: clamp(0.5rem, 1vw, 1rem);
 }
 
 *::-webkit-scrollbar-track {
-    background: rgba(var(--tanRGB), 0.3);
+    background: rgba(var(--tanRGB), 0.5);
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgba(var(--tanRGB), 0.5);
+    background-color: rgba(var(--tanRGB), 1);
     border-radius: 0;
 }
 
@@ -115,15 +115,33 @@ header {
 
 .social {
     display: flex;
-    padding: 1rem 0.25rem;
+    justify-content: center;
+    align-items: top;
+    padding: 1rem 0;
     gap: clamp(1rem, 2vw, 2rem);
-    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-size: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.socialIcons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(0.5rem, 2vw, 1rem);
 }
 
 .social i {
     transition: color 0.2s ease-in-out;
     color: rgba(255, 255, 255, 0.3);
+}
 
+.social #blogLink {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(1rem, 2.25vw, 1.75rem);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    color: rgba(255, 255, 255, 0.3);
+    transition: color 0.2s ease-in-out;
+    text-align: left;
 }
 
 .social i:hover {
@@ -131,13 +149,18 @@ header {
     color: #fff;
 }
 
+.social #blogLink:hover {
+    cursor: pointer;
+    color: rgb(var(--tanRGB));
+}
+
 .headText h1 {
     font-family: 'Space Mono', monospace;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(1.75rem, 4vw, 3.5rem);
     font-variant: small-caps;
     letter-spacing: 0.25vh;
     color: rgb(var(--blueRGB));
-    text-shadow: -1px 0 0 rgb(var(--tanRGB)), 0 1px 0 rgb(var(--tanRGB)), 1px 0 0 rgb(var(--tanRGB)), 0 -1px 0 rgb(var(--tanRGB));
+    text-shadow: -2px 0 0 rgb(var(--tanRGB)), 0 2px 0 rgb(var(--tanRGB)), 2px 0 0 rgb(var(--tanRGB)), 0 -2px 0 rgb(var(--tanRGB));
 }
 
 .headText h2 {
@@ -148,4 +171,10 @@ header {
 header h1, header h2 {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
+}
+
+@media screen and (min-width: 1280px) {
+    body {
+        min-height: 600px;
+    }
 }
