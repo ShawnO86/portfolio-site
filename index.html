@@ -32,12 +32,12 @@
     </header>
 
     <main>
-        <div class="collBtn" id="aboutBtn" tabindex="1">
+        <div class="collBtn" id="aboutBtn" tabindex="1" aria-expanded="false" aria-controls="About">
             <i class="fa-solid fa-address-card"></i>
             <h3>About Me</h3>
         </div>
 
-        <section class="content" id="About">
+        <section class="content" id="About" role="region" aria-labelledby="aboutBtn" aria-hidden="true">
             <h4>Hello and welcome to my portfolio!</h4>
             <div id="aboutContainer" class="innerContent">
                 <div id="aboutText">
@@ -69,11 +69,11 @@
 
         </section>
 
-        <div class="collBtn" id="projectBtn" tabindex="2">
+        <div class="collBtn" id="projectBtn" tabindex="2" aria-expanded="false" aria-controls="Projects">
             <i class="fa-solid fa-image"></i>
             <h3>My Projects</h3>
         </div>
-        <section class="content" id="Projects">
+        <section class="content" id="Projects" role="region" aria-labelledby="projectBtn" aria-hidden="true">
             <a href="https://shawno86.github.io/cardGames/">
                 <div class="projectBox"><img src="./assets/blackjackScreen.jpg" alt="Blackjack game screenshot">
                     Blackjack 21</div>
@@ -84,11 +84,11 @@
             </div>
         </section>
 
-        <div class="collBtn" id="contactBtn" tabindex="3">
+        <div class="collBtn" id="contactBtn" tabindex="3" aria-expanded="false" aria-controls="Contact">
             <i class="fa-solid fa-envelope"></i>
             <h3>Contact Me</h3>
         </div>
-        <section class="content" id="Contact">
+        <section class="content" id="Contact" role="region" aria-labelledby="contactBtn" aria-hidden="true">
             <h4>Contact form - work in progress...</h4>
             <div id="contactContainer" class="innerContent">
                 <div>
