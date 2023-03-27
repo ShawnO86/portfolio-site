@@ -7,7 +7,7 @@
     overflow: hidden;
     padding: 0 15vw 0 12vw;
     border-left: 0.125rem dashed rgb(var(--tanRGB));
-    color: rgb(var(--blueRGB));
+    opacity: 0;
 }
 
 .content h4 {
@@ -47,6 +47,7 @@
 }
 
 .projectBox {
+    visibility: hidden;
     background-color: rgba(var(--darkRGB), 0.75);
     color: #fff;
     border: 1px solid #000;
@@ -116,6 +117,11 @@
     padding: 0 15vw 0 12vw;
     overflow-y: scroll;
     background-color: rgba(var(--darkRGB), 0.4);
+    opacity: 1;
+}
+
+.activeContent .projectBox {
+    visibility: visible;
 }
 
 .activeContent h4 {
@@ -145,5 +151,24 @@
 
     100% {
         transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        padding: 0 3vw;
+        border: none;
+    }
+
+    .content h4 {
+        margin: 1rem 0;
+    }
+
+    .projectBox:first-of-type {
+        margin: 1rem auto 0 auto;
+    }
+
+    .projectBox:last-of-type {
+        margin: 0 auto 1rem auto;
     }
 }

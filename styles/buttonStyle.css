@@ -67,3 +67,13 @@
 .activeBtn:hover h3::after {
     transform: translateX(0) rotate(90deg);
 }
+
+@media screen and (max-width: 600px) {
+    .collBtn, .collBtn:hover {
+        padding: 0.5rem 3vw;
+        border-left: none;
+    }
+    .activeBtn, .activeBtn:hover {
+        border-left: none;
+    }
+}

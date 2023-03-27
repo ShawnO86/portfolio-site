@@ -1,6 +1,7 @@
 const sectionBtns = document.querySelectorAll('.collBtn');
 const contentArea = document.querySelectorAll('.content');
 const aboutCont = document.getElementById('About');
+const header = document.getElementsByTagName('header');
 const btnArr = Array.from(sectionBtns);
 const smallFont = 'clamp(0.75rem, 1.5vw, 1rem)';
 const largeFont = 'clamp(1.25rem, 2vw, 2.25rem)';
@@ -11,17 +12,24 @@ for (let i = 0; i < btnArr.length; i++) {
     //give current button event listener
     btnArr[i].addEventListener('click', function () {
         //select collapsed content for current button on left click
-        openContent(btnArr[i])
+        openContent(btnArr[i]);
+        setTimeout(() => {
+            window.scroll({top: 110, behavior: "auto"});
+        }, 500)
     });
     btnArr[i].addEventListener('keypress', function (e) {
         //select collapsed content for current button on enter press
         if (e.key === "Enter") {
             openContent(btnArr[i])
+            setTimeout(() => {
+                window.scroll({top: 110, behavior: "auto"});
+            }, 500)
         }
     });
 };
 
 function openContent(button) {
+
     //filter out the current button in btn array
     const filteredBtns = btnArr.filter((btn) => btn !== button);
     //select collapsed content for current button
