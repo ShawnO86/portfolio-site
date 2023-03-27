@@ -2,11 +2,8 @@ const sectionBtns = document.querySelectorAll('.collBtn');
 const contentArea = document.querySelectorAll('.content');
 const aboutCont = document.getElementById('About');
 const btnArr = Array.from(sectionBtns);
-const [aboutBtn, projectBtn, contactBtn] = btnArr;
-
 const smallFont = 'clamp(0.75rem, 1.5vw, 1rem)';
 const largeFont = 'clamp(1.25rem, 2vw, 2.25rem)';
-
 const getNextElement = (button) => button.nextElementSibling;
 
 //loop over btn array
@@ -21,7 +18,6 @@ for (let i = 0; i < btnArr.length; i++) {
         if (e.key === "Enter") {
             openContent(btnArr[i])
         }
-
     });
 };
 
@@ -59,7 +55,6 @@ function openContent(button) {
             button.firstElementChild.setAttribute("aria-expanded", true)
             content.setAttribute('aria-hidden', false)
         }, 300)
-
         //remove maxHeight and active class from buttons NOT clicked on 
         filteredBtns.forEach((btn) => {
             getNextElement(btn).style.maxHeight = null;
