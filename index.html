@@ -17,7 +17,7 @@
     <header>
         <div class="headText">
             <h1>Shawn Osborne</h1>
-            <h2>Web Developer++</h2>
+            <p>Web Developer++</p>
         </div>
 
         <div class="social">
@@ -32,13 +32,14 @@
     </header>
 
     <main>
-        <div class="collBtn" id="aboutBtn" tabindex="0" aria-expanded="false" aria-controls="About"
-            aria-label="about button">
+
+        <h2 class="collBtn">
+        <button id="aboutBtn" tabindex="0" aria-expanded="false" aria-controls="About">
             <i class="fa-solid fa-address-card"></i>
             <h3>About Me</h3>
-        </div>
-
-        <section class="content" id="About" role="region" aria-labelledby="aboutBtn" aria-hidden="true">
+        </button>
+        </h2>
+        <section class="content" id="About" aria-labelledby="aboutBtn">
             <h4>Hello and welcome to my portfolio!</h4>
             <div id="aboutContainer" class="innerContent">
                 <div id="aboutText">
@@ -67,46 +68,80 @@
                     </p>
                 </div>
             </div>
-
         </section>
 
-
-
-        <div class="collBtn" id="projectBtn" tabindex="0" aria-expanded="false" aria-controls="Projects"
-            aria-label="projects button">
+        <h2 class="collBtn">
+        <button id="projectBtn" tabindex="0" aria-expanded="false" aria-controls="Projects">
             <i class="fa-solid fa-image"></i>
             <h3>My Projects</h3>
-        </div>
-
-        <section class="content" id="Projects" role="region" aria-labelledby="projectBtn" aria-hidden="true">
-
-            <a href="https://shawno86.github.io/cardGames/">
-                <div class="projectBox"><img src="./assets/blackjackScreen.jpg" alt="Blackjack game screenshot">
-                    Blackjack 21</div>
-            </a>
-
-            <a href="#">
-                <div class="projectBox"><img src="./assets/htmlOnPage.jpeg" alt="Placeholder screenshot">work in
-                    progress
+        </button>
+        </h2>
+        <section class="content" id="Projects" aria-labelledby="projectBtn">
+            <div class="projectBox">
+                <div class="projectDesc">
+                    <a href="https://shawno86.github.io/cardGames/">
+                        <img src="./assets/blackjackScreenThumb.jpg" alt="Blackjack game screenshot"></a>
+                    <div>
+                        <h4>Blackjack 21</h4>
+                    </div>
                 </div>
-            </a>
-
-            <a href="#">
-                <div class="projectBox"><img src="./assets/htmlOnPage.jpeg" alt="Placeholder screenshot">work in
-                    progress
+                <div class="projectDetail">
+                    <details>
+                        <summary>
+                            Technologies Used:
+                        </summary>
+                        <p>Object-Oriented Programming</p>
+                        <p>JavaScript(ES6)</p>
+                        <p>SASS</p>
+                        <p>Webpack</p>
+                    </details>
                 </div>
-            </a>
+            </div>
+
+            <div class="projectBox">
+                <div class="projectDesc">
+                    <a href="#">
+                        <img src="./assets/htmlOnPageThumb.jpg" alt="in progress"></a>
+                    <div>
+                        <h4>World Weather</h4>
+                    </div>
+                </div>
+                <div class="projectDetail">
+                    <details>
+                        <summary>
+                            Technologies Used:
+                        </summary>
+                        <p>Placeholder text...</p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="projectBox">
+                <div class="projectDesc">
+                    <a href="#">
+                        <img src="./assets/htmlOnPageThumb.jpg" alt="in progress"></a>
+                    <div>
+                        <h4>Work in progress:</h4>
+                    </div>
+                </div>
+                <div class="projectDetail">
+                    <details>
+                        <summary>
+                            Technologies Used:
+                        </summary>
+                        <p>Placeholder text...</p>
+                    </details>
+                </div>
+            </div>
         </section>
 
-
-
-        <div class="collBtn" id="contactBtn" tabindex="0" aria-expanded="false" aria-controls="Contact"
-            aria-label="contact button">
+        <h2 class="collBtn">
+        <button id="contactBtn" tabindex="0" aria-expanded="false" aria-controls="Contact">
             <i class="fa-solid fa-envelope"></i>
             <h3>Contact Me</h3>
-        </div>
-
-        <section class="content" id="Contact" role="region" aria-labelledby="contactBtn" aria-hidden="true">
+        </button>
+        </h2>
+        <section class="content" id="Contact" aria-labelledby="contactBtn">
             <h4>Contact form - work in progress...</h4>
             <div id="contactContainer" class="innerContent">
                 <div>

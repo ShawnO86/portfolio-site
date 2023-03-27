@@ -58,7 +58,7 @@ function openContent(button) {
               button.style.fontSize = largeFont;
               button.setAttribute("aria-expanded", true)
               content.setAttribute('aria-hidden', false)
-          }, 500)
+          }, 300)
 
           //remove maxHeight and active class from buttons NOT clicked on 
           filteredBtns.forEach((btn) => {

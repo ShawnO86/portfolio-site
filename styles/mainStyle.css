@@ -163,12 +163,12 @@ header {
     text-shadow: -2px 0 0 rgb(var(--tanRGB)), 0 2px 0 rgb(var(--tanRGB)), 2px 0 0 rgb(var(--tanRGB)), 0 -2px 0 rgb(var(--tanRGB));
 }
 
-.headText h2 {
+.headText p {
     font-size: clamp(1rem, 2.25vw, 1.75rem);
     color: rgba(255, 255, 255, 0.3);
 }
 
-header h1, header h2 {
+header h1, header p {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
 }

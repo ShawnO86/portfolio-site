@@ -1,13 +1,18 @@
 .collBtn {
-    font-size: clamp(1.25rem, 2vw, 2.25rem);
-    text-align: left;
     padding: 0.5rem 15vw 0.5rem 12vw;
     width: 100%;
     flex: 1;
-    color: rgba(var(--tanRGB), 0.85);
     border-left: 0.125rem dashed rgb(var(--purpRGB));
     transition: padding 0.2s ease-in-out 0.2s;
     display: flex;
+  }
+
+  .collBtn button {
+    background-color: rgba(var(--purpRGB), 0);
+    color: rgba(var(--tanRGB), 0.85);
+    border: none;
+    font-size: clamp(1.25rem, 2vw, 2.25rem);
+    font-family: 'Space Mono', monospace;
   }
 
 .collBtn i {
@@ -18,7 +23,6 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    font-variant: small-caps;
     width: 100%;
     transition: font-size 0.2s ease-in-out 0.1s;
 }

@@ -3,7 +3,7 @@
     max-height: 0;
     width: 100%;
     font-size: clamp(0.75rem, 2vw, 1rem);
-    transition: max-height 0.4s ease-in;
+    transition: max-height 0.2s ease-in;
     overflow: hidden;
     padding: 0 15vw 0 12vw;
     border-left: 0.125rem dashed rgb(var(--tanRGB));
@@ -15,11 +15,6 @@
     margin: 4rem 0 2rem 0;
     font-size: clamp(1.25rem, 1.5vw, 2rem);
     transition: color 0.2s ease-in;
-}
-
-.content h5 {
-    margin: 0.5rem 0;
-    font-size: 1rem;
 }
 
 .innerContent {
@@ -55,14 +50,65 @@
     background-color: rgba(var(--darkRGB), 0.75);
     color: #fff;
     border: 1px solid #000;
-    text-align: center;
     width: 100%;
+    gap: 1rem;
+    padding: 0.25rem;
+}
+
+.projectBox:first-of-type {
+    margin: 4rem auto 0 auto;
+}
+
+.projectBox:last-of-type {
+    margin: 0 auto 4rem auto;
+}
+
+.projectDesc {
     display: flex;
-    margin: 1rem auto;
+    justify-content: left;
+    gap: 1rem;
+    margin: 0.5rem 1rem 1rem 1rem;
+}
+
+.projectDetail {
+cursor: pointer;
+background-color: rgb(var(--blueRGB));
+padding: 0.5rem 0;
+margin: 1rem 1rem 0.5rem 1rem;
 }
 
 .projectBox img {
-    width: 50%;
+    display: inline-block;
+    width: clamp(10rem, 20vw, 20rem);
+    height: fit-content;
+    opacity: 0.5;
+    transition: opacity 0.2s ease 0s;
+}
+
+.projectBox img:hover {
+    opacity: 0.9;
+}
+
+.projectBox h4 {
+    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
+    font-family: 'Space Mono', monospace;
+    height: fit-content;
+    margin: 0;
+    font-weight: 500;
+}
+
+.projectBox p {
+    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
+    margin-top: 1rem;
+}
+
+.projectBox details {
+    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
+    font-family: 'Space Mono', monospace;
+}
+
+.projectBox details p {
+    padding-left: 1rem;
 }
 
 .activeContent {
@@ -74,12 +120,12 @@
 
 .activeContent h4 {
     color: rgba(255, 255, 255, 0.75);
-    transition: color 0.3s ease-in 0.65s;
+    transition: color 0.3s ease-in 0.45s;
 }
 
 .activeContent .innerContent {
     color: rgba(255, 255, 255, 0.75);
-    transition: color 0.3s ease-in 0.7s;
+    transition: color 0.3s ease-in 0.5s;
 }
 
 .activeContent .innerContent .picture {
