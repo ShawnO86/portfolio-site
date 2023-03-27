@@ -71,10 +71,10 @@
 }
 
 .projectDetail {
-cursor: pointer;
-background-color: rgb(var(--blueRGB));
-padding: 0.5rem 0;
-margin: 1rem 1rem 0.5rem 1rem;
+    cursor: pointer;
+    background-color: rgb(var(--blueRGB));
+    padding: 0.5rem 0;
+    margin: 1rem 1rem 0.5rem 1rem;
 }
 
 .projectBox img {

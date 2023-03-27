@@ -96,9 +96,11 @@ header {
         opacity: 0;
         transform: translateY(-100vh);
     }
+
     60% {
         transform: translateY(-2rem);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);

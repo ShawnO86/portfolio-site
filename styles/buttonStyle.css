@@ -5,15 +5,15 @@
     border-left: 0.125rem dashed rgb(var(--purpRGB));
     transition: padding 0.2s ease-in-out 0.2s;
     display: flex;
-  }
+}
 
-  .collBtn button {
+.collBtn button {
     background-color: rgba(var(--purpRGB), 0);
     color: rgba(var(--tanRGB), 0.85);
     border: none;
-    font-size: clamp(1.25rem, 2vw, 2.25rem);
     font-family: 'Space Mono', monospace;
-  }
+    font-size: inherit;
+}
 
 .collBtn i {
     display: none;
@@ -46,7 +46,7 @@
 }
 
 .collBtn:nth-of-type(2), .collBtn:nth-of-type(3) {
-   border-top: 0.125rem solid rgb(var(--purpRGB));
+    border-top: 0.125rem solid rgb(var(--purpRGB));
 }
 
 .activeBtn {
