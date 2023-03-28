@@ -3,18 +3,18 @@
     max-height: 0;
     width: 100%;
     font-size: clamp(0.75rem, 2vw, 1rem);
-    transition: max-height 0.2s ease-in;
+    transition: max-height 0.3s ease-in-out;
     overflow: hidden;
     padding: 0 15vw 0 12vw;
     border-left: 0.125rem dashed rgb(var(--tanRGB));
-    opacity: 0;
+    color: rgba(255, 255, 255, 0);
 }
 
 .content h4 {
     font-family: 'Space Mono', monospace;
     margin: 4rem 0 2rem 0;
     font-size: clamp(1.25rem, 1.5vw, 2rem);
-    transition: color 0.2s ease-in;
+    color: rgba(255, 255, 255, 0);
 }
 
 .innerContent {
@@ -29,13 +29,25 @@
 }
 
 .innerContent .picture {
-    float: left;
+float: left;
+    width: clamp(12rem, 20vw, 20rem);
     border: 1px dashed rgb(var(--tanRGB));
     background-color: rgba(var(--blueRGB), 0.75);
-    margin: 0.5rem 2rem 1rem 0;
+    margin: 0.5rem clamp(1.25rem, 1.5vw, 2rem) clamp(0.5rem, 1vw, 1rem) 0;
     transform: translateX(-50vw);
     border-radius: 0.25rem;
     padding: 0.5rem;
+    opacity: 0;
+}
+
+#educationContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+#educationContainer .picture {
+    margin: 1rem 0;
 }
 
 #Projects {
@@ -78,6 +90,14 @@
     margin: 1rem 1rem 0.5rem 1rem;
 }
 
+.projectDetail summary {
+    background-color: rgba(var(--purpRGB), 0.4);
+}
+
+.projectDetail summary:hover {
+    background-color: rgba(var(--purpRGB), 0.6);
+}
+
 .projectBox img {
     display: inline-block;
     width: clamp(10rem, 20vw, 20rem);
@@ -117,7 +137,6 @@
     padding: 0 15vw 0 12vw;
     overflow-y: scroll;
     background-color: rgba(var(--darkRGB), 0.4);
-    opacity: 1;
 }
 
 .activeContent .projectBox {
@@ -126,31 +145,33 @@
 
 .activeContent h4 {
     color: rgba(255, 255, 255, 0.75);
-    transition: color 0.3s ease-in 0.45s;
+    transition: color 0.3s ease-in 0.6s;
 }
 
 .activeContent .innerContent {
     color: rgba(255, 255, 255, 0.75);
-    transition: color 0.3s ease-in 0.5s;
+    transition: color 0.3s ease-in 0.6s;
 }
 
 .activeContent .innerContent .picture {
-    height: 10rem;
-    width: 8rem;
-    animation: picIn 0.3s ease-in 0.7s forwards;
+    width: clamp(12rem, 20vw, 20rem);
+    animation: picIn 0.3s ease-in 0.65s forwards;
 }
 
 @keyframes picIn {
     0% {
-        transform: translateX(-50vw);
+        opacity: 0;
+        transform: scale(0%);
     }
 
     80% {
-        transform: translateX(1rem);
+        opacity: 1;
+        transform: scale(115%);
     }
 
     100% {
-        transform: translateX(0);
+        opacity: 1;
+        transform: scale(100%);
     }
 }
 

@@ -13,17 +13,11 @@ for (let i = 0; i < btnArr.length; i++) {
     btnArr[i].addEventListener('click', function () {
         //select collapsed content for current button on left click
         openContent(btnArr[i]);
-        setTimeout(() => {
-            window.scroll({top: 110, behavior: "auto"});
-        }, 500)
     });
     btnArr[i].addEventListener('keypress', function (e) {
         //select collapsed content for current button on enter press
         if (e.key === "Enter") {
             openContent(btnArr[i])
-            setTimeout(() => {
-                window.scroll({top: 110, behavior: "auto"});
-            }, 500)
         }
     });
 };
@@ -62,7 +56,7 @@ function openContent(button) {
             button.style.fontSize = largeFont;
             button.firstElementChild.setAttribute("aria-expanded", true)
             content.setAttribute('aria-hidden', false)
-        }, 300)
+        }, 500)
         //remove maxHeight and active class from buttons NOT clicked on 
         filteredBtns.forEach((btn) => {
             getNextElement(btn).style.maxHeight = null;
