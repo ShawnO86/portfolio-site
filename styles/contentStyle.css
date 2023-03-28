@@ -103,11 +103,12 @@ float: left;
     width: clamp(10rem, 20vw, 20rem);
     height: fit-content;
     opacity: 0.5;
-    transition: opacity 0.2s ease 0s;
+    transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0s;
 }
 
 .projectBox img:hover {
-    opacity: 0.9;
+    opacity: 1;
+    transform: scale(1.5);
 }
 
 .projectBox h4 {
