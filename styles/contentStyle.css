@@ -66,6 +66,7 @@ float: left;
     width: 100%;
     gap: 1rem;
     padding: 0.25rem;
+    font-family: 'Space Mono', monospace;
 }
 
 .projectBox:first-of-type {
@@ -83,15 +84,17 @@ float: left;
     margin: 0.5rem 1rem 1rem 1rem;
 }
 
+.descText {
+    padding: 1rem 0 0 1rem;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    color: rgba(255, 255, 255, 0.75);
+}
+
 .projectDetail {
     cursor: pointer;
     background-color: rgb(var(--blueRGB));
     padding: 0.5rem 0;
     margin: 1rem 1rem 0.5rem 1rem;
-}
-
-.projectDetail summary {
-    background-color: rgba(var(--purpRGB), 0.4);
 }
 
 .projectDetail summary:hover {
@@ -113,24 +116,15 @@ float: left;
 
 .projectBox h4 {
     font-size: clamp(0.75rem, 1.25vw, 1.25rem);
-    font-family: 'Space Mono', monospace;
     height: fit-content;
     margin: 0;
     font-weight: 500;
 }
 
-.projectBox p {
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
-    margin-top: 1rem;
-}
-
-.projectBox details {
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
-    font-family: 'Space Mono', monospace;
-}
-
 .projectBox details p {
     padding-left: 1rem;
+    font-size: clamp(0.5rem, 1vw, 1rem);
+    margin-top: 1rem;
 }
 
 .activeContent {
