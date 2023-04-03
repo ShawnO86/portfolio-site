@@ -1,21 +1,23 @@
-const sectionBtns = document.querySelectorAll('.collBtn');
-const contentArea = document.querySelectorAll('.content');
-const aboutCont = document.getElementById('About');
-const header = document.getElementsByTagName('header');
-const btnArr = Array.from(sectionBtns);
+const sectionBtns = document.getElementsByClassName('collBtn');
+const contentArea = document.getElementsByClassName('content');
+const btnArr = [...sectionBtns];
 const smallFont = 'clamp(0.75rem, 1.5vw, 1rem)';
 const largeFont = 'clamp(1.25rem, 2vw, 2.25rem)';
 const getNextElement = (button) => button.nextElementSibling;
 
-//loop over btn array
+//Open about me section on initial load -- after 500ms
+setTimeout(() => {
+    openContent(btnArr[0]);
+}, 500)
+
+//loop over btn array to set listener to each accordian button
 for (let i = 0; i < btnArr.length; i++) {
-    //give current button event listener
+    //set initial font size
+    btnArr[i].style.fontSize = largeFont;
     btnArr[i].addEventListener('click', function () {
-        //select collapsed content for current button on left click
         openContent(btnArr[i]);
     });
     btnArr[i].addEventListener('keypress', function (e) {
-        //select collapsed content for current button on enter press
         if (e.key === "Enter") {
             openContent(btnArr[i])
         }
@@ -23,7 +25,6 @@ for (let i = 0; i < btnArr.length; i++) {
 };
 
 function openContent(button) {
-
     //filter out the current button in btn array
     const filteredBtns = btnArr.filter((btn) => btn !== button);
     //select collapsed content for current button
@@ -56,7 +57,7 @@ function openContent(button) {
             button.style.fontSize = largeFont;
             button.firstElementChild.setAttribute("aria-expanded", true)
             content.setAttribute('aria-hidden', false)
-        }, 500)
+        }, 400)
         //remove maxHeight and active class from buttons NOT clicked on 
         filteredBtns.forEach((btn) => {
             getNextElement(btn).style.maxHeight = null;

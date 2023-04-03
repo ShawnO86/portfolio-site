@@ -1,4 +1,5 @@
 .content {
+    will-change: auto;
     text-align: justify;
     max-height: 0;
     width: 100%;
@@ -21,15 +22,14 @@
     display: flex;
     line-height: 1.6;
     margin-bottom: 4rem;
+    color: rgba(255, 255, 255, 0);
 }
 
 .innerContent p {
-    margin-bottom: 0.5rem;
-    clear: both;
+    margin: 0.5rem 0;
 }
 
-.innerContent .picture {
-float: left;
+.picture {
     width: clamp(12rem, 20vw, 20rem);
     border: 1px dashed rgb(var(--tanRGB));
     background-color: rgba(var(--blueRGB), 0.75);
@@ -40,12 +40,17 @@ float: left;
     opacity: 0;
 }
 
+.picture #myPic {
+    height: 20rem;
+}
+
 #educationContainer {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
 }
+
 #educationContainer .picture {
     margin: 1rem 0;
 }
@@ -131,7 +136,7 @@ float: left;
     font-size: clamp(0.75rem, 2vw, 1rem);
     padding: 0 15vw 0 12vw;
     overflow-y: scroll;
-    background-color: rgba(var(--darkRGB), 0.4);
+    background-color: rgba(var(--darkRGB), 0.5);
 }
 
 .activeContent .projectBox {
