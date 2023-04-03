@@ -1,6 +1,7 @@
 const sectionBtns = document.getElementsByClassName('collBtn');
 const contentArea = document.getElementsByClassName('content');
 const btnArr = [...sectionBtns];
+const reachOut = document.getElementById('reachOut');
 const smallFont = 'clamp(0.75rem, 1.5vw, 1rem)';
 const largeFont = 'clamp(1.25rem, 2vw, 2.25rem)';
 const getNextElement = (button) => button.nextElementSibling;
@@ -10,14 +11,18 @@ setTimeout(() => {
     openContent(btnArr[0]);
 }, 500)
 
+reachOut.addEventListener('click', () => {
+    openContent(btnArr[2]);
+}) 
+
 //loop over btn array to set listener to each accordian button
 for (let i = 0; i < btnArr.length; i++) {
     //set initial font size
     btnArr[i].style.fontSize = largeFont;
-    btnArr[i].addEventListener('click', function () {
+    btnArr[i].addEventListener('click', () => {
         openContent(btnArr[i]);
     });
-    btnArr[i].addEventListener('keypress', function (e) {
+    btnArr[i].addEventListener('keypress', (e) => {
         if (e.key === "Enter") {
             openContent(btnArr[i])
         }

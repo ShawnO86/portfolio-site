@@ -161,8 +161,7 @@ header {
     font-size: clamp(2rem, 4vw, 4rem);
     font-variant: small-caps;
     letter-spacing: 0.25vh;
-    color: rgb(var(--darkRGB));
-    text-shadow: -2px 0 0 rgb(var(--tanRGB)), 0 2px 0 rgb(var(--tanRGB)), 2px 0 0 rgb(var(--tanRGB)), 0 -2px 0 rgb(var(--tanRGB));
+    color: rgb(var(--tanRGB));
 }
 
 .headText p {

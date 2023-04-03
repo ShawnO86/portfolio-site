@@ -29,6 +29,16 @@
     margin: 0.5rem 0;
 }
 
+#githubLink {
+    color: rgba(255, 255, 255, 0);
+    text-decoration: underline;
+}
+
+#reachOut {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .picture {
     width: clamp(12rem, 20vw, 20rem);
     border: 1px dashed rgb(var(--tanRGB));
@@ -156,6 +166,11 @@
 .activeContent .innerContent .picture {
     width: clamp(12rem, 20vw, 20rem);
     animation: picIn 0.3s ease-in 0.65s forwards;
+}
+
+.activeContent #githubLink {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.3s ease-in 0.6s;
 }
 
 @keyframes picIn {
