@@ -9,7 +9,7 @@ const getNextElement = (button) => button.nextElementSibling;
 //Open about me section on initial load -- after 500ms
 setTimeout(() => {
     openContent(btnArr[0]);
-}, 500)
+}, 400)
 
 reachOut.addEventListener('click', () => {
     openContent(btnArr[2]);

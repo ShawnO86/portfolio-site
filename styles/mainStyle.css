@@ -178,24 +178,28 @@ header h1, header p {
     body {
         flex-direction: column;
     }
+
     main {
         height: calc(100% - 100px);
     }
+
     header {
         flex-direction: row;
         padding: 0 3vw;
     }
+
     header h1, header p {
         writing-mode: horizontal-tb;
         transform: rotate(0);
     }
+
     .headText {
         flex-direction: column;
         margin: 0;
     }
+
     .headText h1 {
         font-size: 2rem;
         letter-spacing: 0.5vh;
-        text-shadow: -2px 0 0 rgb(var(--tanRGB)), 0 2px 0 rgb(var(--tanRGB)), 2px 0 0 rgb(var(--tanRGB)), 0 -2px 0 rgb(var(--tanRGB));
     }
 }
