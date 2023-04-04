@@ -5,14 +5,8 @@
 :root {
     /* dark mode colors */
     --darkRGB: 7, 9, 13;
-    --purpRGB: 72, 63, 140;
-    --blueRGB: 21, 28, 38;
+    --purpRGB: 20, 26, 38;
     --tanRGB: 173, 134, 64;
-    /* add a light mode! - colors */
-    --light: #4B5059;
-    --purpLight: #6F62D9;
-    --tanLight: #AD7000;
-    --blueLight: #103461;
 }
 
 * {
@@ -25,7 +19,6 @@
 }
 
 /* Webkit browser scrollbar*/
-
 *::-webkit-scrollbar {
     width: clamp(0.5rem, 1vw, 1rem);
 }
@@ -50,6 +43,7 @@ body {
     color: #fff;
     background-color: rgb(var(--darkRGB));
     overflow-x: hidden;
+    background-image: url(../assets/ep_naturalblack.jpg);
 }
 
 main {
@@ -58,9 +52,6 @@ main {
     flex-direction: column;
     opacity: 0;
     animation: mainFadeIn 350ms ease-in-out 500ms forwards;
-    border-top: 0.25rem solid rgb(var(--purpRGB));
-    border-bottom: 0.25rem solid rgb(var(--purpRGB));
-    background-image: url(../assets/ep_naturalblack.jpg);
 }
 
 @keyframes mainFadeIn {
@@ -88,7 +79,7 @@ header {
     text-align: right;
     animation: headFadeIn 350ms linear 150ms forwards;
     opacity: 0;
-    padding: 0 3vw;
+    padding: 0 clamp(3rem, 3vw, 6rem);
 }
 
 @keyframes headFadeIn {
@@ -133,7 +124,7 @@ header {
 
 .social i {
     transition: color 0.2s ease-in-out;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.65);
 }
 
 .social #blogLink {
@@ -141,7 +132,7 @@ header {
     font-size: clamp(1rem, 2.25vw, 1.75rem);
     writing-mode: vertical-lr;
     transform: rotate(180deg);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.65);
     transition: color 0.2s ease-in-out;
     text-align: left;
 }
@@ -166,7 +157,7 @@ header {
 
 .headText p {
     font-size: clamp(1rem, 2.25vw, 1.75rem);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.65);
 }
 
 header h1, header p {

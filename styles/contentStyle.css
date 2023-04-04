@@ -9,6 +9,7 @@
     padding: 0 15vw 0 12vw;
     border-left: 0.125rem dashed rgb(var(--tanRGB));
     color: rgba(255, 255, 255, 0);
+    visibility: hidden;
 }
 
 .content h4 {
@@ -29,13 +30,8 @@
     margin: 0.5rem 0;
 }
 
-#githubLink {
+.innerContent a {
     color: rgba(255, 255, 255, 0);
-    text-decoration: underline;
-}
-
-#reachOut {
-    cursor: pointer;
     text-decoration: underline;
 }
 
@@ -74,7 +70,6 @@
 }
 
 .projectBox {
-    visibility: hidden;
     background-color: rgba(var(--darkRGB), 0.75);
     color: #fff;
     border: 1px solid #000;
@@ -144,12 +139,9 @@
 
 .activeContent {
     font-size: clamp(0.75rem, 2vw, 1rem);
-    padding: 0 15vw 0 12vw;
+    padding: 0 calc(15vw - 0.5rem) 0 12vw;
     overflow-y: scroll;
     background-color: rgba(var(--darkRGB), 0.5);
-}
-
-.activeContent .projectBox {
     visibility: visible;
 }
 
@@ -163,14 +155,14 @@
     transition: color 0.3s ease-in 0.6s;
 }
 
+.activeContent .innerContent a {
+    color: rgba(255, 255, 255, 1);
+    transition: color 0.3s ease-in 0.6s;
+}
+
 .activeContent .innerContent .picture {
     width: clamp(12rem, 20vw, 20rem);
     animation: picIn 0.3s ease-in 0.65s forwards;
-}
-
-.activeContent #githubLink {
-    color: rgba(255, 255, 255, 0.75);
-    transition: color 0.3s ease-in 0.6s;
 }
 
 @keyframes picIn {

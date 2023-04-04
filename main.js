@@ -15,17 +15,18 @@ reachOut.addEventListener('click', () => {
     openContent(btnArr[2]);
 }) 
 
+reachOut.addEventListener('keypress', (e) => {
+    if(e.key == 'enter') {
+        openContent(btnArr[2]);
+    }
+}) 
+
 //loop over btn array to set listener to each accordian button
 for (let i = 0; i < btnArr.length; i++) {
     //set initial font size
     btnArr[i].style.fontSize = largeFont;
     btnArr[i].addEventListener('click', () => {
         openContent(btnArr[i]);
-    });
-    btnArr[i].addEventListener('keypress', (e) => {
-        if (e.key === "Enter") {
-            openContent(btnArr[i])
-        }
     });
 };
 
