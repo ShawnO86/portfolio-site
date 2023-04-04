@@ -38,7 +38,6 @@
 .picture {
     width: clamp(12rem, 20vw, 20rem);
     border: 1px dashed rgb(var(--tanRGB));
-    background-color: rgba(var(--blueRGB), 0.75);
     margin: 0.5rem clamp(1.25rem, 1.5vw, 2rem) clamp(0.5rem, 1vw, 1rem) 0;
     transform: translateX(-50vw);
     border-radius: 0.25rem;
@@ -70,9 +69,9 @@
 }
 
 .projectBox {
-    background-color: rgba(var(--darkRGB), 0.75);
+    border: 1px solid rgb(var(--tanRGB));
+    border-radius: 0.5rem;
     color: #fff;
-    border: 1px solid #000;
     width: 100%;
     gap: 1rem;
     padding: 0.25rem;
@@ -102,13 +101,8 @@
 
 .projectDetail {
     cursor: pointer;
-    background-color: rgb(var(--blueRGB));
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     margin: 1rem 1rem 0.5rem 1rem;
-}
-
-.projectDetail summary:hover {
-    background-color: rgba(var(--purpRGB), 0.6);
 }
 
 .projectBox img {
