@@ -78,12 +78,16 @@
     }
 }
 
-@media screen and (max-height: 256px) and (max-width: 320px) {
+@media screen and (max-height: 20rem) {
     .collBtn, .collBtn:hover {
         padding: 0.25rem 3vw;
     }
 
     .activeBtn, .activeBtn:hover {
         padding: 0.25rem 3vw;
+    }
+    
+    .activeBtn i {
+        transform: translateY(0) rotate(90deg);
     }
 }

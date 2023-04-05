@@ -203,7 +203,7 @@
     }
 }
 
-@media screen and (max-height: 256px) and (max-width: 320px) {
+@media screen and (max-height: 20rem) {
     .activeContent {
         overflow-y: visible;
     }
