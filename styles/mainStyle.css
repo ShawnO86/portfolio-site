@@ -194,3 +194,25 @@ header h1, header p {
         letter-spacing: 0.5vh;
     }
 }
+
+@media screen and (max-height: 350px) {
+    body {
+        height: 100%;
+        overflow-x: visible;
+    }
+
+    main {
+        height: 100%;
+    }
+
+    .headText {
+        margin: 0 clamp(0.5rem, 1vw, 1rem) 0 0;
+    }
+
+    .social {
+        padding: 0;
+        gap: 0.75rem;
+        font-size: 0.75rem;
+    }
+
+}
