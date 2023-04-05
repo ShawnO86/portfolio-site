@@ -78,7 +78,7 @@
     }
 }
 
-@media screen and (max-height: 260px) {
+@media screen and (max-height: 256px) and (max-width: 320px) {
     .collBtn, .collBtn:hover {
         padding: 0.25rem 3vw;
     }
