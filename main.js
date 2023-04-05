@@ -23,6 +23,7 @@ window.addEventListener("resize", () => {
     if (zoomedMedia.matches) {
         zoomed400Xlayout();
     } else {
+        //close all sections on resize if not zoomed
         for (let i = 0; i < btnArr.length; i++) {
             btnArr[i].classList.remove('activeBtn');
             btnArr[i].firstElementChild.setAttribute("aria-expanded", false);
@@ -30,11 +31,6 @@ window.addEventListener("resize", () => {
             getNextElement(btnArr[i]).setAttribute('aria-hidden', true);
             getNextElement(btnArr[i]).style.maxHeight = null;
             btnArr[i].style.fontSize = largeFont;
-        };
-        if (getNextElement(btnArr[0]).style.maxHeight) {
-            setTimeout(() => {
-                openContent(btnArr[0]);
-            }, 500);
         };
     };
 });
