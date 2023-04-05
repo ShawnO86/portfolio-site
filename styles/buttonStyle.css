@@ -1,7 +1,7 @@
 .collBtn {
     will-change: auto;
     flex: 1;
-    padding: 0.75rem 15vw 0.75rem 12vw;
+    padding: 1rem 15vw 1rem 12vw;
     width: 100%;
     border-left: 0.125rem dashed rgba(var(--purpRGB), 0);
     transition: padding 0.2s ease-in-out 0.2s;
@@ -64,15 +64,16 @@
     transform: translateX(0) rotate(90deg);
 }
 
-@media screen and (max-width: 600px) {
-    .collBtn, .collBtn:hover, .collBtn button {
+@media screen and (max-width: 750px) {
+    .collBtn, .collBtn:hover {
         color: rgba(255, 255, 255, 0.65);
-        padding: 0.5rem 3vw;
         border-left: none;
         animation: none;
+        padding: 0.75rem 3vw;
     }
 
     .activeBtn, .activeBtn:hover {
         border-left: none;
+        padding: 0.75rem 3vw;
     }
 }

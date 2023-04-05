@@ -165,7 +165,7 @@ header h1, header p {
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
     body {
         flex-direction: column;
     }
