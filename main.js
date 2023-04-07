@@ -5,7 +5,15 @@ const reachOut = document.getElementById('reachOut');
 const smallFont = 'clamp(0.75rem, 1.5vw, 1rem)';
 const largeFont = 'clamp(1rem, 2vw, 2.25rem)';
 const getNextElement = (button) => button.nextElementSibling;
-const toTop = document.getElementById('toTop');
+const toTop = document.querySelectorAll('.toTop');
+
+
+toTop.forEach((btn) => {
+   btn.addEventListener('click', () => {
+    window.scrollTo(0,0)
+}) 
+})
+
 
 
 reachOut.addEventListener('click', () => {

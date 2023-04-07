@@ -213,12 +213,25 @@ header h1, header p {
 
 }
 
-@media screen and (max-height: 25rem) {
+@media screen and (max-height: 22.5rem) {
     body {
         height: fit-content;
         overflow-x: visible;
     }
     main {
         height: 100%;
+        margin-top: 0.5rem;
+    }
+    header {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+}
+
+@media screen and (max-height: 22.5rem) and (max-width: 768px) { 
+    header {
+        position: relative;
+        height: 4rem;
     }
 }

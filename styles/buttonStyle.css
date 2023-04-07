@@ -64,6 +64,11 @@
     transform: translateX(0) rotate(90deg);
 }
 
+.toTop {
+    display: none;
+    padding: 0.25rem 0.5rem;
+}
+
 @media screen and (max-width: 768px) {
     .collBtn, .collBtn:hover {
         color: rgba(255, 255, 255, 0.65);
@@ -78,16 +83,22 @@
     }
 }
 
-@media screen and (max-height: 25rem) {
+@media screen and (max-height: 22.5rem) {
     .collBtn, .collBtn:hover {
-        padding: 0.25rem 3vw;
+        padding: 1rem 3vw;
     }
 
     .activeBtn, .activeBtn:hover {
-        padding: 0.25rem 3vw;
+        padding: 1rem 3vw;
+        position: sticky;
+        top: 0;
+        z-index: 2;
     }
     
     .activeBtn i {
         transform: translateY(0) rotate(90deg);
+    }
+    .toTop {
+        display: block;
     }
 }

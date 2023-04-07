@@ -172,11 +172,11 @@
         border: none;
     }
 
-    .content h4 {
+    .content h3 {
         margin: 1rem 0;
     }
 
-    .projectBox h4 {
+    .projectBox h3 {
         margin: 0;
     }
 
@@ -203,7 +203,7 @@
     }
 }
 
-@media screen and (max-height: 25rem) {
+@media screen and (max-height: 22.5rem) {
     .activeContent {
         overflow-y: visible;
     }
