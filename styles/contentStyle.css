@@ -55,14 +55,6 @@
     margin: 1rem 0;
 }
 
-#Projects {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 2vw;
-}
-
 .projectBox {
     color: rgba(255, 255, 255, 0.75);
     border: 1px solid rgb(var(--tanRGB));
@@ -70,19 +62,25 @@
     width: 100%;
     gap: 1rem;
     padding: 0.5rem;
+    margin-bottom: 1rem;
     font-family: 'Space Mono', monospace;
 }
 
 .projectBox h3 {
     margin-top: 0;
 }
+
 .projectBox h3 a {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: underline;
 }
 
+.projectBox h4 {
+    margin: 0.5rem 0;
+}
+
 .projectBox:first-of-type {
-    margin: 4rem auto 0 auto;
+    margin: 4rem auto 1rem auto;
 }
 
 .projectBox:last-of-type {
@@ -91,14 +89,16 @@
 
 .projectDesc {
     display: flex;
-    justify-content: left;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
+    margin-right: 1rem;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    text-align: right;
 }
 
-.descText {
-    font-size: clamp(0.75rem, 1vw, 1rem);
-    margin-left: 1rem;
+.descText ul {
+    list-style: none;
 }
 
 .projectDetail {
@@ -167,13 +167,17 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
     .content {
         border: none;
     }
 
     .content h3 {
         margin: 1rem 0;
+    }
+
+    .projectBox {
+        margin-bottom: 0.5rem;
     }
 
     .projectBox h3 {
@@ -186,7 +190,7 @@
     }
 
     .projectBox:first-of-type {
-        margin: 2rem auto 0 auto;
+        margin: 1rem auto 0.5rem auto;
     }
 
     .projectBox:last-of-type {
@@ -203,8 +207,21 @@
     }
 }
 
-@media screen and (max-height: 22.5rem) {
+@media screen and (max-height: 27rem) {
     .activeContent {
         overflow-y: visible;
+    }
+    .projectBox:first-of-type {
+        margin: 1rem auto 0.5rem auto;
+    }
+    .projectBox:last-of-type {
+        margin: -0.5rem auto 1rem auto;
+    }
+}
+
+@media screen and (max-width: 25rem) {
+    .projectBox img {
+        width: 7rem;
+        margin-right: 0.25rem;
     }
 }

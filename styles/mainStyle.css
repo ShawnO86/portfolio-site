@@ -166,72 +166,105 @@ header h1, header p {
     transform: rotate(180deg);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
     body {
         flex-direction: column;
     }
 
     main {
-        height: calc(100% - 50px);
+        height: calc(100% - 5rem);
+        margin-top: 0.5rem;
     }
 
     header {
         flex-direction: row;
-        padding: 0 3vw;
+        padding: 0.25rem 3vw;
+        height: 4rem;
     }
 
     header h1, header p {
         writing-mode: horizontal-tb;
         transform: rotate(0);
     }
+
     .headText {
         flex-direction: column;
-        margin: 0 clamp(0.5rem, 1vw, 1rem) 1rem 0;
+        margin: 0.25rem 0.25rem 0 0;
+        padding: 0;
+    }
+
+    .social {
+        padding: 0.5rem 0;
+        gap: 0.5rem;
+        font-size: 1.25rem;
+        align-items: center;
+    }
+
+    .social #blogLink {
+        font-size: 0.75rem;
     }
 
     .headText h1 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
-    
+
     .headText p {
         font-size: 0.75rem;
     }
 
-    .social {
-        padding: 0;
-        gap: 0.75rem;
-        font-size: 0.75rem;
-    }
-
-    .socialIcons {
-        justify-content: center;
-    }
-    
-    .social #blogLink {
-        font-size: 0.5rem;
-    }
-
 }
 
-@media screen and (max-height: 22.5rem) {
+@media screen and (max-height: 27rem) {
     body {
-        height: fit-content;
+        height: 100%;
         overflow-x: visible;
     }
+
     main {
-        height: 100%;
-        margin-top: 0.5rem;
+        margin-top: 0rem;
+        align-items: center;
     }
+
     header {
         position: sticky;
         top: 0;
         height: 100vh;
     }
+
+    .headText {
+        margin: 0.25rem 0.25rem 0 0;
+        padding: 0;
+    }
+
+    .social {
+        padding: 0.5rem 0;
+        gap: 0.5rem;
+        font-size: 1.25rem;
+        align-items: center;
+    }
+
+    .social #blogLink {
+        font-size: 0.75rem;
+    }
+
+    .headText h1 {
+        font-size: 1.5rem;
+    }
+
+    .headText p {
+        font-size: 0.75rem;
+    }
+
 }
 
-@media screen and (max-height: 22.5rem) and (max-width: 768px) { 
+@media screen and (max-height: 27rem) and (max-width: 768px) {
     header {
         position: relative;
         height: 4rem;
     }
+    main {
+        margin-top: 0.5rem;
+        align-items: center;
+    }
+
 }
