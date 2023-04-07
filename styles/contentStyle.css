@@ -12,7 +12,7 @@
     visibility: hidden;
 }
 
-.content h4 {
+.content h3 {
     font-family: 'Space Mono', monospace;
     margin: 4rem 0 2rem 0;
     font-size: clamp(1.25rem, 1.5vw, 2rem);
@@ -73,10 +73,10 @@
     font-family: 'Space Mono', monospace;
 }
 
-.projectBox h4 {
+.projectBox h3 {
     margin-top: 0;
 }
-.projectBox h4 a {
+.projectBox h3 a {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: underline;
 }
@@ -134,7 +134,7 @@
     visibility: visible;
 }
 
-.activeContent h4 {
+.activeContent h3 {
     color: rgba(255, 255, 255, 0.75);
     font-size: clamp(1rem, 2vw, 1.25rem);
     margin-bottom: clamp(0.75rem, 2vw, 1rem);
@@ -203,7 +203,7 @@
     }
 }
 
-@media screen and (max-height: 20rem) {
+@media screen and (max-height: 25rem) {
     .activeContent {
         overflow-y: visible;
     }

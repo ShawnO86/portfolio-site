@@ -80,6 +80,7 @@ header {
     animation: headFadeIn 350ms linear 150ms forwards;
     opacity: 0;
     padding: 0 clamp(3rem, 3vw, 6rem);
+    background-color: rgba(var(--darkRGB), 0.5);
 }
 
 @keyframes headFadeIn {
@@ -171,7 +172,7 @@ header h1, header p {
     }
 
     main {
-        height: calc(100% - 100px);
+        height: calc(100% - 50px);
     }
 
     header {
@@ -183,29 +184,8 @@ header h1, header p {
         writing-mode: horizontal-tb;
         transform: rotate(0);
     }
-
     .headText {
         flex-direction: column;
-        margin: 0;
-    }
-
-    .headText h1 {
-        font-size: 2rem;
-        letter-spacing: 0.5vh;
-    }
-}
-
-@media screen and (max-height: 20rem) {
-    body {
-        height: 100%;
-        overflow-x: visible;
-    }
-
-    main {
-        height: 100%;
-    }
-
-    .headText {
         margin: 0 clamp(0.5rem, 1vw, 1rem) 1rem 0;
     }
 
@@ -229,5 +209,16 @@ header h1, header p {
     
     .social #blogLink {
         font-size: 0.5rem;
+    }
+
+}
+
+@media screen and (max-height: 25rem) {
+    body {
+        height: fit-content;
+        overflow-x: visible;
+    }
+    main {
+        height: 100%;
     }
 }

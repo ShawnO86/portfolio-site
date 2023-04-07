@@ -3,68 +3,30 @@ const contentArea = document.getElementsByClassName('content');
 const btnArr = [...sectionBtns];
 const reachOut = document.getElementById('reachOut');
 const smallFont = 'clamp(0.75rem, 1.5vw, 1rem)';
-const largeFont = 'clamp(1.25rem, 2vw, 2.25rem)';
+const largeFont = 'clamp(1rem, 2vw, 2.25rem)';
 const getNextElement = (button) => button.nextElementSibling;
-const zoomedMedia = window.matchMedia("(max-height: 20rem)");
+const toTop = document.getElementById('toTop');
 
-if (zoomedMedia.matches) {
-    zoomed400Xlayout();
-} else {
-    normalLayout();
-    //Open about me section on initial load -- after 500ms -- if its not already open
-    if (!getNextElement(btnArr[0]).style.maxHeight) {
-        setTimeout(() => {
-            openContent(btnArr[0]);
-        }, 500);
-    };
-};
 
-window.addEventListener("resize", () => {
-    if (zoomedMedia.matches) {
-        zoomed400Xlayout();
-    } else {
-        //close all sections on resize if not zoomed
-        for (let i = 0; i < btnArr.length; i++) {
-            btnArr[i].classList.remove('activeBtn');
-            btnArr[i].firstElementChild.setAttribute("aria-expanded", false);
-            getNextElement(btnArr[i]).classList.remove('activeContent');
-            getNextElement(btnArr[i]).setAttribute('aria-hidden', true);
-            getNextElement(btnArr[i]).style.maxHeight = null;
-            btnArr[i].style.fontSize = largeFont;
-        };
+reachOut.addEventListener('click', () => {
+    openContent(btnArr[2]);
+});
+
+reachOut.addEventListener('keypress', (e) => {
+    if (e.key == 'enter') {
+        openContent(btnArr[2]);
     };
 });
 
-function zoomed400Xlayout() {
-    for (let i = 0; i < btnArr.length; i++) {
-        btnArr[i].classList.add('activeBtn');
-        btnArr[i].firstElementChild.setAttribute("aria-expanded", true);
-        getNextElement(btnArr[i]).classList.add('activeContent');
-        getNextElement(btnArr[i]).setAttribute('aria-hidden', false);
-        getNextElement(btnArr[i]).style.maxHeight = (getNextElement(btnArr[i]).scrollHeight + 300) + 'px';
-    };
+//loop over btn array to set listener to each accordian button
+for (let i = 0; i < btnArr.length; i++) {
+    //set initial font size
+    btnArr[i].style.fontSize = largeFont;
+    btnArr[i].addEventListener('click', () => {
+        openContent(btnArr[i]);
+    });
 };
 
-function normalLayout() {
-    reachOut.addEventListener('click', () => {
-        openContent(btnArr[2]);
-    });
-
-    reachOut.addEventListener('keypress', (e) => {
-        if (e.key == 'enter') {
-            openContent(btnArr[2]);
-        };
-    });
-
-    //loop over btn array to set listener to each accordian button
-    for (let i = 0; i < btnArr.length; i++) {
-        //set initial font size
-        btnArr[i].style.fontSize = largeFont;
-        btnArr[i].addEventListener('click', () => {
-            openContent(btnArr[i]);
-        });
-    };
-};
 
 function openContent(button) {
     //filter out the current button in btn array
