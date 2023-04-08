@@ -99,16 +99,14 @@
                     <a href="https://shawno86.github.io/cardGames/" target="_blank">
                         <img src="./assets/blackjackScreenThumb.jpg" alt="Blackjack game screenshot"></a>
                     <div>
-                        <h3><a href="https://shawno86.github.io/cardGames/" target="_blank">Blackjack 21</a></h3>
-                        <h4>Technologies used</h4>
+                        <h3 class="projectTitle"><a href="https://shawno86.github.io/cardGames/" target="_blank">Blackjack 21</a></h3>
+                        <h4>Technologies used ...</h4>
                         <div class="descText">
-                            <ul>
-                                <li>Object-Oriented Programming</li>
-                                <li>JavaScript</li>
-                                <li>Local Storage</li>
-                                <li>SASS</li>
-                                <li>Webpack</li>
-                            </ul>
+                                <p>... Object-Oriented Programming</p>
+                                <p>... JavaScript</p>
+                                <p>... Local Storage</p>
+                                <p>... SASS</p>
+                                <p>... Webpack</p>
                         </div>
                     </div>
                 </div>
@@ -117,7 +115,23 @@
                         <summary>
                             Description:
                         </summary>
-                        <p>Placeholder text... for now</p>
+                        <p>For this project, I used a modular object-oriented structure for reuse in multiple card
+                            games.</p>
+                        <p>The module - oopCards.js contains the logic for setting up the deck, dealing cards,
+                            calculating total points, and rendering the cards. The object-oriented structure includes
+                            Classes representing the players, cards, deck, and score.</p>
+                        <p>The module - blackjack.js imports the Table class from the oopCards.js file, which creates
+                            the player and deck objects from the respective Classes. The Table Class represents a
+                            blackjack table and has several methods, such as:</p>
+                        <p>... start() - initializes the table with players and a deck of cards.</p>
+                        <p>... newCard() - deals with a new card from the remaining cards in the deck.</p>
+                        <p>... renderCard() - creates a new div for each card that contains their suit (&#9824; &#9827;
+                            &#9830; &#9829;) and face (A, K, Q, J, or a number 2-10) if the face value is a number it
+                            renders that amount of suit icons to the card div. </p>
+                        <p>This file also holds the various HTML element variables used for the different UI elements.
+                            It contains game state information such as player and dealer hands, scores, and the number
+                            of wins. It also checks for saved scores in local storage and uses them to initialize the
+                            player and dealer win amounts. </p>
                     </details>
                 </div>
             </div>
@@ -127,7 +141,7 @@
                     <a href="https://weather-app-frontend-9s8u.onrender.com/" target="_blank">
                         <img src="./assets/htmlOnPageThumb.jpg" alt="in progress"></a>
                     <div>
-                        <h3><a href="https://weather-app-frontend-9s8u.onrender.com/" target="_blank">World Weather</a>
+                        <h3 class="projectTitle"><a href="https://weather-app-frontend-9s8u.onrender.com/" target="_blank">World Weather</a>
                         </h3>
                         <h4>Technologies used</h4>
                         <div class="descText">
@@ -152,16 +166,21 @@
                 </div>
             </div>
 
-            <div class="projectBox" id="WIP">
+            <div class="projectBox" id="paint">
                 <div class="projectDesc">
-                    <a href="#" target="_blank">
+                    <a href="https://shawno86.github.io/paint-amount/" target="_blank">
                         <img src="./assets/htmlOnPageThumb.jpg" alt="in progress"></a>
                     <div>
-                        <h3><a href="#" target="_blank">Work in progress...</a>
+                        <h3 class="projectTitle"><a href="#" target="_blank">Paint Amount Calculator</a>
                         </h3>
                         <h4>Technologies used</h4>
                         <div class="descText">
                             <ul>
+                                <li>Vue.js</li>
+                                <li>Vue CLI</li>
+                                <li>Vue Single File Component</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
                             </ul>
                         </div>
                     </div>
