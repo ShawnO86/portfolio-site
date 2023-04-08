@@ -70,7 +70,7 @@
     background-color: rgba(var(--darkRGB), 0);
     border: none;
     color: rgb(var(--tanRGB));
-
+    cursor: pointer;
 }
 
 @media screen and (max-width: 48rem) {
