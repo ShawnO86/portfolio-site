@@ -8,6 +8,10 @@ const getNextElement = (button) => button.nextElementSibling;
 const toTop = document.querySelectorAll('.toTop');
 
 
+setTimeout(() => {
+    openContent(btnArr[0]);
+}, 1000)
+
 toTop.forEach((btn) => {
    btn.addEventListener('click', () => {
     window.scrollTo(0,0)
