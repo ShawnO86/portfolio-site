@@ -46,12 +46,6 @@
     opacity: 0;
 }
 
-#Projects {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 #educationContainer {
     display: flex;
     justify-content: space-between;
@@ -65,11 +59,7 @@
 
 .projectBox {
     color: rgba(255, 255, 255, 0.75);
-    border-radius: 0.5rem;
-    gap: 1rem;
-    padding: 0.5rem;
     margin-bottom: 1rem;
-    width: 100%;
 }
 
 .projectBox h3 {
@@ -77,10 +67,11 @@
     font-family: 'Space Mono', monospace;
 }
 
-.projectBox h3 a {
+.projectBox h3 a, .projectBox a {
     color: rgb(var(--tanRGB));
     text-decoration: underline;
 }
+
 .projectBox h3 a:hover {
     color: rgba(255, 255, 255, 0.75);
 }
@@ -99,14 +90,16 @@
 
 .projectDesc {
     display: flex;
-    gap: 1rem;
-    margin-right: 1rem;
+    gap: clamp(1rem, 5vw, 5rem);
     font-size: clamp(0.75rem, 1vw, 1rem);
 }
 
 .projectDetail {
-    cursor: pointer;
     padding: 0.5rem 0;
+}
+
+.projectDetail details[open] {
+    border-bottom: 1px solid rgb(var(--tanRGB));
 }
 
 .projectBox img {
@@ -115,7 +108,6 @@
     height: fit-content;
     opacity: 0.5;
     transition: opacity 0.3s ease, transform 0.3s ease 0.1s;
-    margin: 0 0.5rem 0 1rem;
     border-radius: 0.25rem;
 }
 
@@ -126,12 +118,18 @@
 
 .projectBox summary {
     padding: 1rem;
+    border-bottom: 1px solid rgb(var(--tanRGB));
+    cursor: pointer;
 }
 
 .projectBox details p {
     padding: 0 1rem;
     font-size: clamp(0.75rem, 1vw, 1rem);
     margin-top: 1rem;
+}
+
+.projectBox details p:last-of-type {
+    padding-bottom: 1rem;
 }
 
 .activeContent {
@@ -149,9 +147,17 @@
     margin-bottom: clamp(0.75rem, 2vw, 1rem);
 }
 
-.activeContent .innerContent, .activeContent .innerContent a {
+.activeContent .innerContent {
     color: rgba(255, 255, 255, 0.75);
     transition: color 0.3s ease-in 0.6s;
+}
+
+.activeContent .innerContent a {
+    color: rgb(var(--tanRGB));
+}
+
+.activeContent .innerContent a:hover {
+    color: rgb(255, 255, 255);
 }
 
 .activeContent .innerContent .picture {
@@ -177,10 +183,6 @@
 }
 
 @media screen and (max-width: 48rem) {
-    .content {
-        border: none;
-    }
-
     .content h3 {
         margin: 1rem 0;
     }
@@ -208,6 +210,7 @@
 
     .activeContent {
         padding: 0 3vw;
+        border-bottom: 0.125rem dashed rgb(var(--tanRGB));
     }
 
     .activeContent .innerContent .picture {
@@ -220,15 +223,28 @@
     .activeContent {
         overflow-y: visible;
     }
+
     .projectBox:first-of-type {
         margin: 1rem auto 0.5rem auto;
     }
+
     .projectBox:last-of-type {
         margin: -0.5rem auto 1rem auto;
     }
 }
 
 @media screen and (max-width: 25rem) {
+    .projectDesc {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .projectBox summary {
+        padding: 1rem 0;
+    }
+
     .projectBox img {
         width: 7rem;
         margin-right: 0.25rem;
