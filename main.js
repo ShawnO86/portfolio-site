@@ -14,8 +14,6 @@ toTop.forEach((btn) => {
 }) 
 })
 
-
-
 reachOut.addEventListener('click', () => {
     openContent(btnArr[2]);
 });
@@ -32,6 +30,9 @@ for (let i = 0; i < btnArr.length; i++) {
     btnArr[i].style.fontSize = largeFont;
     btnArr[i].addEventListener('click', () => {
         openContent(btnArr[i]);
+        setTimeout(() => {
+            btnArr[i].scrollIntoView({block: "start", behavior: "smooth"})
+        }, 600)
     });
 };
 

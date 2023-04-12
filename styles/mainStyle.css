@@ -50,6 +50,7 @@ main {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     opacity: 0;
     animation: mainFadeIn 350ms ease-in-out 500ms forwards;
 }
@@ -222,7 +223,6 @@ header h1, header p {
 
     main {
         margin-top: 0rem;
-        align-items: center;
     }
 
     header {
@@ -257,7 +257,7 @@ header h1, header p {
 
 }
 
-@media screen and (max-height: 27rem) and (max-width: 768px) {
+@media screen and (max-height: 27rem) and (max-width: 48rem) {
     header {
         position: relative;
         height: 4rem;
