@@ -6,16 +6,29 @@ const smallFont = 'clamp(0.75rem, 1.5vw, 1rem)';
 const largeFont = 'clamp(1rem, 2vw, 2.25rem)';
 const getNextElement = (button) => button.nextElementSibling;
 const toTop = document.querySelectorAll('.toTop');
-
+const edPictures = document.querySelectorAll('.edPicture')
 
 setTimeout(() => {
     openContent(btnArr[0]);
 }, 1000)
 
+edPictures.forEach((pic) => {
+    pic.addEventListener('click', () => {
+        if (pic.classList.contains('openPic')) {
+            pic.classList.remove('openPic')
+        } else {
+            pic.classList.add('openPic')
+            setTimeout(() => {
+               pic.scrollIntoView({ block: "start", behavior: "smooth" })
+            }, 150)
+        }
+    })
+})
+
 toTop.forEach((btn) => {
-   btn.addEventListener('click', () => {
-    window.scrollTo(0,0)
-}) 
+    btn.addEventListener('click', () => {
+        window.scrollTo(0, 0)
+    })
 })
 
 reachOut.addEventListener('click', () => {
@@ -35,7 +48,7 @@ for (let i = 0; i < btnArr.length; i++) {
     btnArr[i].addEventListener('click', () => {
         openContent(btnArr[i]);
         setTimeout(() => {
-            btnArr[i].scrollIntoView({block: "start", behavior: "smooth"})
+            btnArr[i].scrollIntoView({ block: "start", behavior: "smooth" })
         }, 600)
     });
 };
@@ -70,7 +83,7 @@ function openContent(button) {
     } else {
         //if maxHeight not set, give a maxHeight of the contents scroll height
         setTimeout(() => {
-            content.style.maxHeight = (content.scrollHeight + 300) + 'px';
+            content.style.maxHeight = (content.scrollHeight + 400) + 'px';
             button.style.fontSize = largeFont;
             button.firstElementChild.setAttribute("aria-expanded", true);
             content.setAttribute('aria-hidden', false);

@@ -8,7 +8,10 @@
     <meta name="description" content="Shawn Osborne's Portfolio, Web Developer, Web Designer, Front-End Developer">
     <title>Shawn Osborne - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/11151d2983.js" crossorigin="anonymous" defer></script>
     <link rel="preload" href="./styles/contentStyle.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="./styles/mainStyle.css">
@@ -50,31 +53,43 @@
                         I recently graduated with an associate's degree in web programming. I
                         am passionate about designing and developing responsive, user-friendly, functional, and
                         aesthetically pleasing websites and applications that enhance the user experience.
-                        <br> <br>
+                    </p>
+                    <p>
                         As a certified front-end web developer and responsive web designer , I have gained knowledge and
                         experience in various programing languages related to the web, including HTML, CSS,
                         JavaScript, SQL, PHP, and the basics of C#. I am also learning to use popular front-end
                         frameworks such as Vue.js and SASS, which will enable me to create dynamic, interactive,
                         and scalable web applications.
-                        <br> <br>
+                    </p>
+                    <p>
                         Apart from web development, I am also a dedicated family man who enjoys spending
                         quapty time with my loved ones. I also love to cook and experiment with different dishes,
                         and in my free time I love to play and explore in different video games.
-                        <br> <br>
+                    </p>
+                    <p>
                         As a lifelong learner, I strive to stay up to date with the latest web development trends and
                         best practices to deliver high-quality projects that meet or exceed my clients' expectations.
-                        <br> <br>
-                        I thank you for taking the time to learn a bit about me. Please feel free to explore my
+                    </p>
+                    <p>
+                        Thank you for taking the time to learn a bit about me. Please feel free to explore my
                         portfolio as well as my
                         <a href="https://github.com/ShawnO86" target="_blank" aria-label="githublink"
                             id="githublink">Github</a> and <a href="#" id="reachOut" aria-label="reachOut">reach out</a>
                         if you have any questions or opportunities for collaboration.
                     </p>
                     <div id="educationContainer">
-                        <div class="picture" id="myPic">img of me</div>
-                        <div class="picture">img of Degree</div>
-                        <div class="picture">img of FEND cert</div>
-                        <div class="picture">img of RWD cert</div>
+                        <h4>My education:</h4>
+                        <div id="edVerifyImgs">
+                            <div class="edPicture">
+                                <div>AAS - Web Programming:<img src="./assets/WP_AAS.jpg"></div>
+                            </div>
+                            <div class="edPicture">
+                                <div>Certificate - Responsive Web Design:<img src="./assets/RWD_cert.jpg"></div>
+                            </div>
+                            <div class="edPicture">
+                                <div>Certificate- Front-End Development:<img src="./assets/FEND_cert.jpg"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,12 +105,13 @@
 
         <section class="content" id="Projects" aria-labelledby="projectBtn">
             <div class="projectBox" id="blackjack">
+                <h3 class="projectTitle"><a href="https://shawno86.github.io/cardGames/" target="_blank">Blackjack
+                        21</a></h3>
                 <div class="projectDesc">
+
                     <a href="https://shawno86.github.io/cardGames/" target="_blank">
                         <img src="./assets/blackjackScreenThumb.jpg" alt="Blackjack game screenshot"></a>
                     <div>
-                        <h3 class="projectTitle"><a href="https://shawno86.github.io/cardGames/"
-                                target="_blank">Blackjack 21</a></h3>
                         <h4>Technologies used:</h4>
                         <div class="descText">
                             <p>Object-Oriented Programming</p>
@@ -128,27 +144,28 @@
                             It contains game state information such as player and dealer hands, scores, and the number
                             of wins. It also checks for saved scores in local storage and uses them to initialize the
                             player and dealer win amounts.</p>
-                        <p>View the github repo here: <a href="https://github.com/ShawnO86/cardGames" target="_blank">Card Games</a></p>
+                        <p>View the github repo here: <a href="https://github.com/ShawnO86/cardGames"
+                                target="_blank">Card Games</a></p>
                     </details>
                 </div>
             </div>
 
             <div class="projectBox" id="weather">
+                <h3 class="projectTitle"><a href="https://weather-app-frontend-9s8u.onrender.com/" target="_blank">World
+                        Weather</a>
+                </h3>
                 <div class="projectDesc">
                     <a href="https://weather-app-frontend-9s8u.onrender.com/" target="_blank">
-                        <img src="./assets/htmlOnPageThumb.jpg" alt="in progress"></a>
+                        <img src="./assets/weatherScreen.jpg" alt="World weather screenshot"></a>
                     <div>
-                        <h3 class="projectTitle"><a href="https://weather-app-frontend-9s8u.onrender.com/"
-                                target="_blank">World Weather</a>
-                        </h3>
                         <h4>Technologies used:</h4>
                         <div class="descText">
-                                <p>JavaScript</p>
-                                <p>REST API</p>
-                                <p>Node</p>
-                                <p>Express.js</p>
-                                <p>SASS</p>
-                                <p>Webpack</p>
+                            <p>JavaScript</p>
+                            <p>REST API</p>
+                            <p>Node</p>
+                            <p>Express.js</p>
+                            <p>SASS</p>
+                            <p>Webpack</p>
                         </div>
                     </div>
                 </div>
@@ -163,19 +180,18 @@
             </div>
 
             <div class="projectBox" id="paint">
+                <h3 class="projectTitle"><a href="#" target="_blank">Paint Amount Calculator</a>
+                </h3>
                 <div class="projectDesc">
                     <a href="https://shawno86.github.io/paint-amount/" target="_blank">
-                        <img src="./assets/htmlOnPageThumb.jpg" alt="in progress"></a>
+                        <img src="./assets/paintScreen.jpg" alt="in progress"></a>
                     <div>
-                        <h3 class="projectTitle"><a href="#" target="_blank">Paint Amount Calculator</a>
-                        </h3>
                         <h4>Technologies used:</h4>
-                        <div class="descText">
-                                <p>Vue.js</p>
-                                <p>Vue Cp</p>
-                                <p>Vue Single File Component</p>
-                                <p>CSS</p>
-                                <p>JavaScript</p>
+                        <div class="descText">                            
+                            <p>JavaScript</p>
+                            <p>Vue.js</p>
+                            <p>Vue Single File Components</p>
+                            <p>CSS</p>
                         </div>
                     </div>
                 </div>

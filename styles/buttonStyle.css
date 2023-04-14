@@ -28,7 +28,7 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.collBtn:hover{
+.collBtn:hover {
     animation: borderFlash 0.1s 2 forwards ease-in;
 }
 
@@ -100,27 +100,32 @@
 }
 
 @media screen and (max-height: 27rem) {
+    .collBtn, .collBtn:hover {
+        color: rgba(255, 255, 255, 0.65);
+        border-left: none;
+    }
+
     .activeBtn, .activeBtn:hover {
+        border-left: none;       
         position: sticky;
         top: 0;
         z-index: 2;
     }
-    
+
     .activeBtn i {
         transform: translateY(0) rotate(90deg);
     }
+
     .toTop {
         display: block;
+        margin-bottom: 1rem;
     }
 }
 
 
 @media screen and (max-height: 27rem) and (max-width: 48rem) {
-    .collBtn, .collBtn:hover {
-        padding: 1rem 3vw;
-    }
+
     .activeBtn, .activeBtn:hover {
-        padding: 1rem 3vw;
         position: sticky;
         top: 0;
         z-index: 2;
