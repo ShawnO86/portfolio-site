@@ -246,7 +246,7 @@ header h1, header p {
     header {
         position: sticky;
         top: 0;        
-        height: 100svh;
+        height: 100dvh;
         height: 100vh;
     }
 
