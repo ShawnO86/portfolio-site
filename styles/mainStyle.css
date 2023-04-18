@@ -75,8 +75,9 @@ header {
     align-items: center;
     text-align: right;
     animation: headFadeIn 350ms linear 150ms forwards;
+    transition: padding 0.2s ease;
     opacity: 0;
-    padding: 0 clamp(2rem, 3vw, 6rem);
+    padding: 0 clamp(5rem, 5vw, 12rem);
     background-color: rgba(var(--darkRGB), 0.5);
 }
 
@@ -111,6 +112,7 @@ header {
     padding: 1rem 0;
     gap: clamp(1rem, 2vw, 2rem);
     font-size: clamp(1.25rem, 3vw, 2.5rem);
+    transition: font-size 0.2s ease;
 }
 
 .socialIcons {
@@ -131,7 +133,7 @@ header {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     color: rgba(255, 255, 255, 0.65);
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, font-size 0.2s ease;
     text-align: left;
 }
 
@@ -151,17 +153,53 @@ header {
     font-variant: small-caps;
     letter-spacing: 0.25vh;
     color: rgb(var(--tanRGB));
+    transition: font-size 0.2s ease;
 }
 
 .headText p {
     font-size: clamp(1rem, 2.25vw, 1.75rem);
     color: rgba(255, 255, 255, 0.65);
+    transition: font-size 0.2s ease;
 }
 
 header h1, header p {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
 }
+
+.dull {
+    padding: 0 clamp(1rem, 1.5vw, 3rem);
+    transition: padding 0.2s ease;
+}
+
+.dull .headText h1 {
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: rgba(var(--tanRGB), 0.65);
+    transition: font-size 0.2s ease;
+}
+
+.dull .headText p {
+    font-size: clamp(0.75rem, 1vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.5);
+    transition: font-size 0.2s ease;
+}
+
+.dull .social {
+    font-size: clamp(0.75rem, 1vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.5);
+    transition: font-size 0.2s ease;
+}
+
+.social i {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.dull .social #blogLink {
+    font-size: clamp(0.75rem, 1vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.5);
+    transition: font-size 0.2s ease;
+}
+
 
 @media screen and (max-width: 48rem) {
     body {
@@ -245,7 +283,7 @@ header h1, header p {
 
     header {
         position: sticky;
-        top: 0;        
+        top: 0;
         height: 100dvh;
         height: 100vh;
     }
@@ -256,7 +294,7 @@ header h1, header p {
     }
 }
 
-@media screen and (max-height: 37.5rem) and (max-width: 48rem){
+@media screen and (max-height: 37.5rem) and (max-width: 48rem) {
     .social {
         padding: 0.5rem 0;
         gap: 0.5rem;
@@ -282,6 +320,7 @@ header h1, header p {
         position: relative;
         height: 4rem;
     }
+
     main {
         margin-top: 0.5rem;
         align-items: center;

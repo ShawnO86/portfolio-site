@@ -2,7 +2,6 @@
 
 .content {
     will-change: auto;
-    text-align: justify;
     max-height: 0;
     width: 100%;
     line-height: 1.6;
@@ -37,18 +36,10 @@
     text-decoration: underline;
 }
 
-.edPicture {
-    opacity: 0;
-    cursor: zoom-in;
-    text-align: center;
-    min-width: fit-content;
-}
-
-.edPicture img {
-    display: block;
-    border-radius: 0.25rem;
-    width: clamp(12rem, 20vw, 20rem);
-    transition: width 0.2s ease-in-out;
+#educationContainer #edVerifyImgs {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
 }
 
 #educationContainer h4 {
@@ -56,10 +47,42 @@
     border-bottom: 1px solid rgb(var(--tanRGB));
 }
 
-#educationContainer #edVerifyImgs {
+.edDescript {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 2rem;
+}
+
+.bookHolder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.edText, .bookText {
+    width: 60%;
+}
+
+.edPicture {
+    cursor: zoom-in;
+    max-width: fit-content;
+    opacity: 0;
+}
+
+.edPicture img {
+    border-radius: 0.25rem;
+    width: clamp(12rem, 20vw, 25rem);
+    transition: width 0.2s ease-in-out;
+}
+
+.bookPicture {
+    width: clamp(13rem, 21vw, 26rem);
+}
+
+.bookPicture img {
+    width: clamp(12rem, 20vw, 20rem);
 }
 
 .projectBox {
@@ -138,6 +161,35 @@
     padding-bottom: 1rem;
 }
 
+#contactInfo {
+    padding: 10% 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60%;
+}
+
+#contactInfo a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    text-decoration: none;
+    background-color: rgba(var(--darkRGB), 0.5);
+    border: 1px solid rgb(var(--darkRGB));
+    border-top: 0.125rem solid rgb(var(--darkRGB));
+    border-bottom: 0.125rem solid rgb(var(--darkRGB));
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+}
+
+#contactInfo a:hover {
+    color: rgba(255, 255, 255, 1);
+    animation: borderFlash 0.1s 2 forwards ease-in;
+}
+
 .activeContent {
     font-size: clamp(0.75rem, 2vw, 1rem);
     padding: 0 calc(12vw - 0.5rem) 0 10vw;
@@ -150,7 +202,7 @@
 .activeContent h3 {
     color: rgba(255, 255, 255, 0.75);
     font-size: clamp(1rem, 2vw, 1.25rem);
-    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+    margin-bottom: clamp(1rem, 2vw, 2rem);
 }
 
 .activeContent .innerContent {
@@ -170,32 +222,37 @@
 .activeContent .innerContent .edPicture {
     width: clamp(12rem, 20vw, 20rem);
     animation: picIn 0.3s ease-in 0.65s forwards;
-
 }
 
-.activeContent .innerContent .openPic img {
+.activeContent .innerContent .openPic {
     width: 100%;
-    cursor: zoom-out;    
+    cursor: zoom-out;
+    margin: auto;
+}
+
+.openPic img {
+    width: 100%;
+}
+
+.openPicText {
+    width: 100%;
 }
 
 @keyframes picIn {
     0% {
         opacity: 0;
-        transform: scale(0%);
     }
 
     80% {
         opacity: 1;
-        transform: scale(115%);
     }
 
     100% {
         opacity: 1;
-        transform: scale(100%);
     }
 }
 
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 59rem) {
     .projectBox {
         margin-bottom: 0.5rem;
     }
@@ -211,6 +268,11 @@
 
     .projectBox:last-of-type {
         margin: 0 auto 2rem auto;
+    }
+
+    .bookHolder {
+        justify-content: space-between;
+        gap: 10vw;
     }
 
     .activeContent {
@@ -239,9 +301,9 @@
     }
 }
 
-@media screen and (max-width: 35rem) {
-    #educationContainer #edVerifyImgs {
-        justify-content: center;
+@media screen and (max-width: 38.5rem) {
+    .edText {
+        width: 100%;
     }
 }
 
