@@ -9,6 +9,7 @@ const toTop = document.querySelectorAll('.toTop');
 const edPictures = document.querySelectorAll('.edPicture');
 const header = document.getElementsByTagName('header')
 
+//open "about me" after 1000ms
 setTimeout(() => {
     openContent(btnArr[0]);
 }, 1000);
@@ -86,7 +87,7 @@ function openContent(button) {
         header[0].classList.add('dull');
         //if maxHeight not set, give a maxHeight of the contents scroll height
         setTimeout(() => {
-            content.style.maxHeight = (content.scrollHeight + 400) + 'px';
+            content.style.maxHeight = (content.scrollHeight + 1000)/16 + 'rem';
             button.style.fontSize = largeFont;
             button.firstElementChild.setAttribute("aria-expanded", true);
             content.setAttribute('aria-hidden', false);
