@@ -107,9 +107,6 @@
 
     .activeBtn, .activeBtn:hover {
         border-left: none;       
-        position: sticky;
-        top: 0;
-        z-index: 2;
     }
 
     .activeBtn i {
@@ -119,15 +116,5 @@
     .toTop {
         display: block;
         margin-bottom: 1rem;
-    }
-}
-
-
-@media screen and (max-height: 27rem) and (max-width: 59rem) {
-
-    .activeBtn, .activeBtn:hover {
-        position: sticky;
-        top: 0;
-        z-index: 2;
     }
 }

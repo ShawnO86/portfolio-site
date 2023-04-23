@@ -94,11 +94,11 @@ function openContent(button) {
         header[0].classList.add('dull');
         //if maxHeight not set, give a maxHeight of the contents scroll height to display
         setTimeout(() => {
-            content.style.maxHeight = (content.scrollHeight + 1000)/16 + 'rem';
+            content.style.maxHeight = '100%';
             button.style.fontSize = largeFont;
             button.firstElementChild.setAttribute("aria-expanded", true);
             content.setAttribute('aria-hidden', false);
-        }, 400)
+        }, 150)
         //remove maxHeight and active class from buttons NOT clicked on to close other open content
         filteredBtns.forEach((btn) => {
             getNextElement(btn).style.maxHeight = null;
