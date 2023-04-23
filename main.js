@@ -9,36 +9,39 @@ const toTop = document.querySelectorAll('.toTop');
 const edPictures = document.querySelectorAll('.edPicture');
 const header = document.getElementsByTagName('header')
 
-//open "about me" after 1000ms
+//open "about me" after 1000ms on initial load or refresh
 setTimeout(() => {
     openContent(btnArr[0]);
 }, 1000);
 
+//expand degree and certification images or set to initial size
 edPictures.forEach((pic) => {
     pic.addEventListener('click', () => {
         if (pic.classList.contains('openPic')) {
             pic.classList.remove('openPic');
-            getNextElement(pic).classList.remove('openPicText')
+            getNextElement(pic).classList.remove('openPicText');
         } else {
             pic.classList.add('openPic');
-            getNextElement(pic).classList.add('openPicText')
+            getNextElement(pic).classList.add('openPicText');
             setTimeout(() => {
                 pic.scrollIntoView({ block: "start", behavior: "smooth" })
-             }, 150)
-        }
-    })
-})
-
-toTop.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        window.scrollTo(0, 0)
+             }, 150);
+        };
     })
 });
 
+//button for scrolling to top of page
+toTop.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        window.scrollTo(0, 0);
+    })
+});
+
+//reach out link in about me text -- opens contact me section on click
 reachOut.addEventListener('click', () => {
     openContent(btnArr[2]);
 });
-
+//reach out link in about me text -- opens contact me section on enter
 reachOut.addEventListener('keypress', (e) => {
     if (e.key == 'enter') {
         openContent(btnArr[2]);
@@ -49,24 +52,30 @@ reachOut.addEventListener('keypress', (e) => {
 for (let i = 0; i < btnArr.length; i++) {
     //set initial font size
     btnArr[i].style.fontSize = largeFont;
+    //listener too open corresponding section
     btnArr[i].addEventListener('click', () => {
         openContent(btnArr[i]);
+        //timeout to allow for current section to "close" before new one opens
         setTimeout(() => {
             btnArr[i].scrollIntoView({ block: "start", behavior: "smooth" })
-        }, 600)
+        }, 600);
     });
 };
 
+//opens next section related to "button"
 function openContent(button) {
     //filter out the current button in btn array
     const filteredBtns = btnArr.filter((btn) => btn !== button);
-    //select collapsed content for current button
+    //select next section for current button
     let content = getNextElement(button);
-    //add active class to clicked button       
+    //add active classes to clicked button and content     
     content.classList.add('activeContent');
     button.classList.add('activeBtn');
+    //aria-expanded for accessibility of accordian
     button.firstElementChild.setAttribute("aria-expanded", true);
+    //remove aria-hidden from active content for accessibility
     content.setAttribute('aria-hidden', false);
+    //for each button not clicked on
     filteredBtns.forEach((btn) => {
         getNextElement(btn).style.maxHeight = null;
         btn.classList.remove('activeBtn');
@@ -84,15 +93,16 @@ function openContent(button) {
         content.setAttribute('aria-hidden', true);
         button.firstElementChild.setAttribute("aria-expanded", false);
     } else {
+        //contract header padding for less used space when content is open
         header[0].classList.add('dull');
-        //if maxHeight not set, give a maxHeight of the contents scroll height
+        //if maxHeight not set, give a maxHeight of the contents scroll height to display
         setTimeout(() => {
             content.style.maxHeight = (content.scrollHeight + 1000)/16 + 'rem';
             button.style.fontSize = largeFont;
             button.firstElementChild.setAttribute("aria-expanded", true);
             content.setAttribute('aria-hidden', false);
         }, 400)
-        //remove maxHeight and active class from buttons NOT clicked on 
+        //remove maxHeight and active class from buttons NOT clicked on to close other open content
         filteredBtns.forEach((btn) => {
             getNextElement(btn).style.maxHeight = null;
             btn.classList.remove('activeBtn');
