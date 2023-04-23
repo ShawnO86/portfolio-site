@@ -1,14 +1,22 @@
 const sectionBtns = document.getElementsByClassName('collBtn');
-const contentArea = document.getElementsByClassName('content');
 const btnArr = [...sectionBtns];
+const contentArea = document.getElementsByClassName('content');
+const toTopBtns = document.getElementsByClassName('toTop');
+const toTop = [...toTopBtns];
+const edPictureBtns = document.getElementsByClassName('edPicture');
+const edPictures = [...edPictureBtns];
 const reachOut = document.getElementById('reachOut');
 const smallFont = 'clamp(0.75rem, 1.25vw, 1rem)';
 const largeFont = 'clamp(1rem, 2vw, 2rem)';
 const getNextElement = (button) => button.nextElementSibling;
-const toTop = document.querySelectorAll('.toTop');
-const edPictures = document.querySelectorAll('.edPicture');
 const header = document.getElementsByTagName('header')
 
+
+console.log(sectionBtns)
+
+console.log(btnArr)
+
+console.log(header)
 //open "about me" after 1000ms on initial load or refresh
 setTimeout(() => {
     openContent(btnArr[0]);
