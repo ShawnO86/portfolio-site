@@ -67,7 +67,11 @@
 
 .edPicture {
     cursor: zoom-in;
-    max-width: fit-content;
+    width: fit-content;
+}
+
+.edPicture h5 {
+    width: 100%;
 }
 
 .edPicture img {
