@@ -1,4 +1,5 @@
 @import url('./buttonStyle.css');
+@import url('./stars.css');
 
 .content {
     will-change: auto;

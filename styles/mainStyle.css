@@ -77,7 +77,7 @@ header {
     animation: headFadeIn 350ms linear 150ms forwards;
     transition: padding 0.2s ease;
     opacity: 0;
-    padding: 0 clamp(5rem, 5vw, 12rem);
+    padding: 0 clamp(3rem, 3vw, 6rem);
     background-color: rgba(var(--darkRGB), 0.5);
 }
 

@@ -1,0 +1,37 @@
+.stars {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.star {
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    opacity: 0;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.1;
+    }
+
+    10% {
+        opacity: 0.75;
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
