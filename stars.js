@@ -11,11 +11,10 @@ function generateStarField(low, high) {
         const starSize = randomNum(1, 3) + "px";
         const inc_length = randomNum(low, high);
         const inc_delay = randomNum(1, 4);
-        const position = randomNum(0, 100) + "%";
 
         star.classList.add("star");
-        star.style.top = position;
-        star.style.left = position;
+        star.style.top = randomNum(0, 100) + "%";
+        star.style.left = randomNum(0, 100) + "%";
         star.style.width = starSize;
         star.style.height = starSize;
         star.style.animation = `twinkle ${inc_length}s ${inc_delay}s infinite`;
