@@ -17,7 +17,7 @@
 
 .content h3 {
     font-family: 'Space Mono', monospace;
-    margin: 4rem 0 2rem 0;
+    margin: 2rem 0;
     font-size: clamp(1.25rem, 1.5vw, 2rem);
     color: rgba(255, 255, 255, 0);
 }
@@ -35,6 +35,22 @@
 .innerContent a {
     color: rgba(255, 255, 255, 0);
     text-decoration: underline;
+}
+
+#intro {
+    display: flex;
+    align-items: first baseline;
+    justify-content: right;
+    gap: 2rem;
+}
+
+#intro h3 {
+    position: sticky;
+    top: 2rem;
+}
+
+#introText {
+    max-width: 60%;
 }
 
 #educationContainer #edVerifyImgs {
@@ -291,6 +307,16 @@
 }
 
 @media screen and (max-width: 38.5rem) {
+    #intro {
+        flex-wrap: wrap;
+    }
+    #intro h3 {
+        margin-top: 1rem;
+        position: relative;
+    }
+    #introText {
+        max-width: 100%;
+    }
     .edText {
         width: 100%;
     }
