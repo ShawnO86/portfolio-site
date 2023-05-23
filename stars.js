@@ -6,11 +6,11 @@ function randomNum(min, max) {
 
 const fragment = document.createDocumentFragment();
 function generateStarField(low, high) {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
         const star = document.createElement("div");
         const starSize = randomNum(1, 3) + "px";
         const inc_length = randomNum(low, high);
-        const inc_delay = randomNum(1, 4);
+        const inc_delay = randomNum(1, 10);
 
         star.classList.add("star");
         star.style.top = randomNum(0, 100) + "%";
@@ -23,4 +23,5 @@ function generateStarField(low, high) {
     space.appendChild(fragment);
 };
 
-generateStarField(4, 10);
+generateStarField(6, 15);
+generateStarField(8, 20);
