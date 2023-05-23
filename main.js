@@ -9,11 +9,6 @@ const largeFont = 'clamp(1rem, 2vw, 2rem)';
 const getNextElement = (button) => button.nextElementSibling;
 const header = document.getElementsByTagName('header')
 
-//open "about me" after 1000ms on initial load or refresh
-setTimeout(() => {
-    openContent(btnArr[0]);
-}, 700);
-
 //expand degree and certification images or set to initial size
 edPictures.forEach((pic) => {
     pic.addEventListener('click', () => {
