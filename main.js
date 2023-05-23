@@ -54,6 +54,15 @@ for (let i = 0; i < btnArr.length; i++) {
     });
 };
 
+function closeContent(btn, font) {
+    getNextElement(btn).style.maxHeight = null;
+    btn.classList.remove('activeBtn');
+    getNextElement(btn).classList.remove('activeContent');
+    btn.firstElementChild.setAttribute("aria-expanded", false);
+    btn.style.fontSize = font;
+    getNextElement(btn).setAttribute('aria-hidden', true);
+};
+
 //opens next section related to "button"
 function openContent(button) {
     //filter out the current button in btn array
@@ -69,12 +78,7 @@ function openContent(button) {
     content.setAttribute('aria-hidden', false);
     //for each button not clicked on
     filteredBtns.forEach((btn) => {
-        getNextElement(btn).style.maxHeight = null;
-        btn.classList.remove('activeBtn');
-        getNextElement(btn).classList.remove('activeContent');
-        btn.firstElementChild.setAttribute("aria-expanded", false);
-        btn.style.fontSize = largeFont;
-        getNextElement(btn).setAttribute('aria-hidden', true);
+        closeContent(btn, largeFont);
     });
     //if maxHeight is set on clicked button, collapse content and remove active classes
     if (content.style.maxHeight) {
@@ -96,12 +100,7 @@ function openContent(button) {
         }, 150)
         //remove maxHeight and active class from buttons NOT clicked on to close other open content
         filteredBtns.forEach((btn) => {
-            getNextElement(btn).style.maxHeight = null;
-            btn.classList.remove('activeBtn');
-            getNextElement(btn).classList.remove('activeContent');
-            btn.style.fontSize = smallFont;
-            btn.firstElementChild.setAttribute("aria-expanded", false);
-            getNextElement(btn).setAttribute('aria-hidden', true);
+            closeContent(btn, smallFont);
         });
     };
 };
