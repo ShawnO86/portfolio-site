@@ -1,10 +1,11 @@
 .stars {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
+    overflow: hidden;
 }
 
 .star {
@@ -28,6 +29,15 @@
     }
 
     100% {
-        opacity: 0.1;
+        opacity: 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(200px, 1000px);
     }
 }

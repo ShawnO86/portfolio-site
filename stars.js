@@ -6,7 +6,7 @@ function randomNum(min, max) {
 
 const fragment = document.createDocumentFragment();
 function generateStarField(low, high) {
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 10; i++) {
         const star = document.createElement("div");
         const starSize = randomNum(1, 3) + "px";
         const inc_length = randomNum(low, high);
@@ -17,7 +17,10 @@ function generateStarField(low, high) {
         star.style.left = randomNum(0, 100) + "%";
         star.style.width = starSize;
         star.style.height = starSize;
-        star.style.animation = `twinkle ${inc_length}s ${inc_delay}s infinite`;
+        star.style.animationName = `twinkle, move`;
+        star.style.animationDuration = inc_length + 's';
+        star.style.animationDelay = inc_delay + 's';
+        star.style.animationIterationCount = 'infinite';
         fragment.appendChild(star);
     };
     space.appendChild(fragment);
